@@ -56,7 +56,7 @@ export default defineConfig(({ command, mode }) => {
             host: '0.0.0.0',
             port: 5173, // Use port 5173 for dev server.
             strictPort: true, // Don't try next available port if 5173 isn't available.
-            origin: 'http://localhost:5174', // Rewrite asset URLs explicitly since the CMS web server is on a different host.
+            origin: 'http://localhost:5173', // Rewrite asset URLs explicitly since the CMS web server is on a different host.
             watch: {
                 ignored: ["storage/**", "vendor/**"],
             },
