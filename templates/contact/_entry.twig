@@ -1,0 +1,22 @@
+{% extends "_layout" %}
+{% set title = "Contact" %}
+
+{% block content %}
+    <div class="contact">
+        <h2>Contact</h2>
+
+    <div class="contact-form" id="form-morelandco">
+        {% switch craft.app.request.url %}
+        {% case "/contact" %}
+            {{ craft.freeform.form("contact", {
+                labelClass: "form-label",
+                inputClass: "form-control",
+                returnUrl: "{{ craft.config.get('siteUrl') }}contact/bevestiging",
+                instructionsBelowField: true,
+                overrideValues: {
+                    hiddenFieldHandle: entry.id,
+                }
+            }).render() }}
+        {% endswitch %}
+    </div>
+{% endblock %}

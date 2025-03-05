@@ -1,0 +1,26 @@
+{% set footerGlobal = craft.app.globals.getSetByHandle('footer') %}
+
+{% if footerGlobal and footerGlobal.footerElements|length %}
+    <ul>
+        {% for element in footerGlobal.footerElements %}
+
+            <li>
+                {% set logo = element.logo.one() %} {# Get the first image if the field allows multiple uploads #}
+                {% if logo %}
+                    <img src="{{ logo.url }}" alt="{{ logo.title }}">
+                {% endif %}
+            </li>
+
+            <li>{{ element.footerAdres }}</li>
+            <li>{{ element.footerTelefoon }}</li>
+            <li><a href="mailto:{{ element.footerEmail }}">{{ element.footerEmail }}</a></li>
+            <li>{{ element.footerFacebook }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No footer elements found.</p>
+{% endif %}
+
+<hr>
+
+

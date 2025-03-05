@@ -1,0 +1,21 @@
+{# props:
+ #
+ # - block
+ # - - heading
+ # - - body
+ #
+ #}
+
+<div class="js-smooth-section page-heading">
+    <div class="container">
+        <div class="header-text">
+            {% if block.heading %}
+                {{ block.heading }}
+            {% endif %}
+            {{ block.body }}
+            {% if block.ctabutton.text %}
+                <a class="cta-green" href="{{ block.ctabutton.url }}">{{ block.ctabutton.text }}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

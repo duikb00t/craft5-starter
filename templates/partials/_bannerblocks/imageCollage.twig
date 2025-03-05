@@ -1,0 +1,80 @@
+{% set src = "/assets/images" %}
+
+{% if block.collage|length > 0 %}
+    {% set collageData = block.collage.all() %}
+    <div class="big-standaart-banner big-standaart-collage container-self">
+        <div class="row">
+            {% set count = collageData | length %}
+            {% for collageItem in collageData %}
+                {% if collageItem.image.one() is not empty %}
+                    {% set image = collageItem.image.one()  %}
+                    <img src="{{ image ? image.url }}" style="width: calc(100%/{{ count }});padding: 0;" alt="{{ image.imageAlt }}" class="img-fluid">
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        {% if craft.app.request.getSegment(-1) == "contact" %}
+            {% for key, col in footer.footer.all() %}
+                <div class="cta-balk-container">
+                    <address class="cta-balk-collage">
+                        <div class="cta-buttons-line">
+                            {% switch currentLocale %}
+                                {% case 'nl-BE' %}
+                                <div class="cta-buttons">
+                                    <a href="tel:{{ col.footerTel }}" class="call-us-button"><button>Bel ons</button></a>
+                                    <a href="mailto:{{ col.footerEmail }}" class="mail-us-button">Mail ons</a>
+                                </div>
+                                {% case 'en-BE' %}
+                                <div class="cta-buttons">
+                                    <a href="tel:{{ col.footerTel }}" class="call-us-button"><button>Call us</button></a>
+                                    <a href="mailto:{{ col.footerEmail }}" class="mail-us-button">Mail us</a>
+                                </div>
+                            {% endswitch %}
+                        </div>
+                        <ul>
+                            <li>
+                                {{ col.footerAdres|replace({"-" : "\n"})|striptags('<a>')|raw|nl2br }}
+                            </li>
+                            <li><a href="tel:{{ col.footerTel }}">{{ col.footerTel }}</a></li>
+                            <li><a href="mailto:{{ col.footerEmail }}">{{ col.footerEmail }}</a></li>
+                            <li>
+                                {% if col.footerInstagram.url is not empty %}
+                                    <a href="{{ col.footerInstagram.url }}" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+                                {% endif %}
+
+                                {% if col.footerFacebook.url is not empty %}
+                                /
+                                <a href="{{ col.footerFacebook.url }}" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a></li>
+                            {% endif %}
+                        </ul>
+                    </address>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% set events = craft.entries.section('events').orderBy('date desc') %}
+        {% if craft.app.request.getSegment(-1) == "events-expo" %}
+            {% if events | length %}
+                <div class="cta-balk-container cta-events">
+                    {#<div class="cta-balk-collage">
+                        <ul>
+                            {% for event in events|slice(0, 3) %}
+                                <li>
+                                    <a href="{{ event.url }}" rel="noreferrer noopener">{{ event.title }}</a>
+                                    <p>{{ event.date|date }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="cta-buttons-line">
+                            <div class="cta-buttons">
+                                {% set contact = craft.entries.section("contact").one() %}
+                                <a href="{{ contact.url }}" class="call-us-button"><button>Register</button></a>
+                            </div>
+                        </div>
+                    </div>#}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endif %}
+

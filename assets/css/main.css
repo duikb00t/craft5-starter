@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: red;
+    color: black;
+}
+
+h2{
+    color:green;
+    background: pink;
+}
+
+h3 {
+    color: red;
+    background: blue;
+}
+
+
+header{
+    border: 5px solid green;
+}

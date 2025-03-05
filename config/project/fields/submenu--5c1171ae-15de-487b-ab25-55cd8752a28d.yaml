@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: submenu
+instructions: null
+name: Submenu
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    - 88ee5a92-a6cc-48ad-9d2e-277bf7f5bcb0 # Link Block
+    - bd965774-d989-4ad8-9b4e-2b31bc5ca453 # Dropdown Block
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

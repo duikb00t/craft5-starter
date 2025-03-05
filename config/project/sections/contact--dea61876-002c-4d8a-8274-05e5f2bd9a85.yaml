@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 99ccb2ea-b9c7-4e56-9ac6-198e11ee5ba4 # Text + image
+handle: contact
+maxAuthors: 1
+name: Contact
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primaire invoer-pagina'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Betonbouw en grondwerken - Lavens
+    enabledByDefault: true
+    hasUrls: true
+    template: contact/_entry.twig
+    uriFormat: contact
+type: single

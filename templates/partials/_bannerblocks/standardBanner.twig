@@ -1,0 +1,24 @@
+{% set src = "/assets/images" %}
+
+{% if block is not empty %}
+    <div class="big-standaart-banner container-self">
+        <img src="{{  block.image.one() ? block.image.one().url }}" alt="{{ block.imageAlt }}">
+        {% if block.bannerText %}
+            <div class="banner-text">
+                <p>{{ block.bannerText }}</p>
+            </div>
+        {% endif %}
+        <div class="cta-banner cta-standaart-banner">
+            <div class="cta-banner-content title-{{ block.ctaFontkleur.value }}">
+                <h1 class="cta-banner-titel">{{  block.ctaTitel }}</h1>
+                {% if block.ctaSubtitel is not empty %}
+                    <h2>{{  block.ctaSubtitel }}</h2>
+                {% endif %}
+                {% if block.ctaButton.url or block.ctaButton.title is not empty %}
+                    <a class="cta-banner-button-req" {% if block.ctaButton.url is not empty %}href="{{ block.ctaButton.url }}{% endif %}">{{ block.ctaButton.title }}</a>
+                {% endif %}
+            </div>
+        </div>
+        <img class="mouse-scroll" src="{{ craft.app.sites.primarySite.baseUrl }}uploads/mouse.png" alt="scroll down">
+    </div>
+{% endif %}

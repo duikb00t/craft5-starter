@@ -1,0 +1,64 @@
+{% set currentLocale = craft.app.locale.id %}
+<!DOCTYPE html>
+<html lang="{{ currentLocale }}">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="copyright" content="WK - Ward Kennes"/>
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="{{ craft.app.sites.primarySite.baseUrl }}/uploads/og-image.jpg">
+    <meta property="og:url" content="{{ craft.app.sites.primarySite.baseUrl }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#000">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <link rel="preconnect" href="{{ currentSite.baseUrl }}" crossorigin>
+    <meta name="csrf-token" content="{{ craft.app.request.csrfToken() }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GXXXXXXGXXXXXXGXXXXXXGXXXXXXGXXXXXXGXXXXXX"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NG3XP4LL47'); </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-GXXXXXXGXXXXXXGXXXXXXGXXXXXXGXXXXXXGXXXXXX');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+<body class="d-flex">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-GXXXXXXGXXXXXXGXXXXXXGXXXXXXGXXXXXXGXXXXXX"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="navigation">
+    <div id="nav">
+        {# Header #}
+        {{  include('partials/components/_navigation') }}
+    </div>
+</header>
+
+<main class="flex-shrink-0">
+    {% block content %}
+        <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+        <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+    {% endblock %}
+</main>
+{# Footer #}
+{{ include('partials/components/_footer') }}
+
+{#{{ craft.twigpack.includeJsModule("/dist/main.js") }}#}
+--
+{{ dump(craft.vite) }}
+{{ craft.vite.script("assets/js/main.js") }}
+--
+</body>
+</html>

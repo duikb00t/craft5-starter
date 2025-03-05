@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: footerEmail
+instructions: null
+name: 'Footer Email'
+searchable: false
+settings:
+  placeholder: 'Schijf hier het e-mailadres voor in de footer'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

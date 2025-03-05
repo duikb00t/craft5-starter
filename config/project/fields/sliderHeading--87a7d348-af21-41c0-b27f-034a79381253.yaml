@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: sliderHeading
+instructions: null
+name: Heading
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 150
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: 'Tekst op de slide'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

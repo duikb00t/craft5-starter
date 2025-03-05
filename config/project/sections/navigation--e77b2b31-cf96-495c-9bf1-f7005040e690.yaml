@@ -1,0 +1,32 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    name: 'Menu Item'
+    uid: d2408a6f-37bd-471d-92e3-d9267deb4710 # Menu Items
+handle: navigation
+maxAuthors: 1
+name: Navigation
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Betonbouw en grondwerken - Lavens
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 8528e91f-b40e-451c-8523-3a0d2a58fa02
+type: structure

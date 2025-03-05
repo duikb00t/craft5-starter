@@ -1,0 +1,67 @@
+color: null
+fieldLayouts:
+  46777f79-aec0-49cb-a337-e3ea0f355883:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-12-29T21:15:10+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3a01efdb-b488-4b6e-a168-bcaecfab8806
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-29T21:19:43+00:00'
+            elementCondition: null
+            fieldUid: b9aa5b6c-d612-43a5-8358-5549be3d2da7 # Dropdown Label
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6283b39-b488-4eeb-811e-6799ad718d46
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f3772171-ed2a-4d47-a262-bfcc3290d946
+        userCondition: null
+handle: dropdownBlock
+hasTitleField: true
+icon: null
+name: 'Dropdown Block'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

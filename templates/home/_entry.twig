@@ -1,0 +1,100 @@
+{% extends "_layout" %}
+{% set title = "Home" %}
+
+{% block content %}
+    <div class="projects">
+        {% if entry.bannerblocks is defined and entry.bannerblocks|length %}
+            {% include "_partials/_bannerblocks.twig" with { block: entry.bannerblocks.all() } %}
+        {% endif %}
+
+        {% if entry.contentblocks is defined and entry.contentblocks|length %}
+            {% include "_partials/_contentblocks.twig" with { block: entry.contentblocks.all() } %}
+        {% endif %}
+
+    </div>
+
+
+    {# <div class="cta container-self cta-standard">
+    <div class="circle-cta">
+        <div class="circle-cta-button {% if currentLocale == 'nl-BE' %}button-nl{% endif %}">
+            {% switch currentLocale %}
+                {% case 'nl-BE' %}
+                    <a href="{{ craft.app.sites.primarySite.baseUrl }}contact"><p>contacteer ons</p></a>
+                    <div class="stripe"></div>
+                    <p>of bel ons</p>
+                {% case 'en-BE' %}
+                    <a href="{{ craft.app.sites.primarySite.baseUrl }}contact"><p>contact us</p></a>
+                    <div class="stripe"></div>
+                    <p>or call us</p>
+            {% endswitch %}
+        </div>
+    </div>
+</div> #}
+
+{% endblock %}
+
+{#        <h2>List all Te Koop</h2>#}
+{#        <div>#}
+{#            <ul>#}
+{#                {% nav page in pages %}#}
+{#                    {% if page.category.one() == "Te koop" %}#}
+{#                    <li>#}
+{#                        {{ page.getLink() }} ({{ page.category.one() }})#}
+{#                    </li>#}
+{#                    {% endif %}#}
+{#                {% endnav %}#}
+{#            </ul>#}
+{#        </div>#}
+
+{#        <hr>#}
+
+{#        <h2>List all Te huur</h2>#}
+{#        <div>#}
+{#            <ul>#}
+{#                {% nav page in pages %}#}
+{#                    {% if page.category.one() == "Te huur" %}#}
+{#                        <li>#}
+{#                            {{ page.getLink() }} ({{ page.category.one() }})#}
+{#                        </li>#}
+{#                    {% endif %}#}
+{#                {% endnav %}#}
+{#            </ul>#}
+{#        </div>#}
+
+{#        <hr>#}
+
+{#        <h2>List all properties</h2>#}
+{#        {% set pages = craft.entries.section('projects').all() %}#}
+
+{#        <nav>#}
+{#            <ul>#}
+{#                {% nav page in pages %}#}
+{#                    <li>#}
+{#                        {{ page.getLink() }} ({{ page.category.one() }})#}
+{#                        {% ifchildren %}#}
+{#                            <ul>#}
+{#                                {% children %}#}
+{#                            </ul>#}
+{#                        {% endifchildren %}#}
+{#                    </li>#}
+{#                {% endnav %}#}
+{#            </ul>#}
+{#        </nav>#}
+
+{#        <hr>#}
+
+{#        <h3>Properties for rent and for sale.</h3>#}
+{#        #}{# Fetch all of the categories related to this entry #}
+{#        {% set categories = craft.categories.slug(['te-huur', 'te-koop']) %}#}
+{#        {% set entries = craft.entries.section('projects').relatedTo(categories).find() %}#}
+
+{#        #}{# If there are any entries, loop through them #}
+{#        {% if entries | length %}#}
+{#            #}{# For each entry we find, do this #}
+{#            {% for entry in entries %}#}
+{#                <p>{{ entry.title }}</p>#}
+{#                <span class="badge badge-pill badge-primary">{{ entry.category.one() }}</span>#}
+{#            {% endfor %}#}
+{#        {% endif %}#}
+{#    </div>#}
+{#</div>#}

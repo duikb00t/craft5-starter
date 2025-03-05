@@ -1,0 +1,20 @@
+{# props:
+ #
+ # - block
+ # - - heading
+ # - - body
+ #
+#}
+
+<div class="js-smooth-section page-heading">
+    <div class="container">
+        <div class="header-text">
+            {% if block.customClassname %}
+                {{ block.customClassname }}
+            {% endif %}
+            {% if block.callToActionAbsolute %}
+                <a class="cta-green" href="{{ block.callToActionAbsolute.url }}">{{ block.callToActionAbsolute.text }}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+columnSuffix: null
+handle: contentblocks
+instructions: null
+name: Content
+searchable: true
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 99ccb2ea-b9c7-4e56-9ac6-198e11ee5ba4 # Text + image
+    -
+      __assoc__:
+        -
+          - uid
+          - d43647bc-a0bb-44e0-885d-3ebd33319bc1 # Text + CTA
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,31 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 710bf09b-4c84-48be-a381-a26df0333086 # Default
+handle: pages
+maxAuthors: 1
+name: Pages
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Betonbouw en grondwerken - Lavens
+    enabledByDefault: true
+    hasUrls: true
+    template: _router.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 0ea5587d-efb0-431c-b94c-d4c0d84f532d
+type: structure

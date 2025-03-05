@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: heroSlider
+instructions: null
+name: Slider
+searchable: false
+settings:
+  createButtonLabel: 'Voeg slide toe'
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - bc9d6031-b5f7-4593-8c92-49823651a56c # Hero Slider - Banner
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,30 @@
+{# props:
+ #
+ # - block
+ # - - heading
+ # - - body
+ #
+ #}
+
+<div class="js-smooth-section page-heading page-header-text-image">
+    <div class="container container-header-text-image">
+        <div class="header-text-image">
+            {% if block.heading %}
+                {{ block.heading }}
+            {% endif %}
+            {{ block.body }}
+            {% if block.ctabutton.text %}
+                <a class="cta-green" href="{{ block.ctabutton.url }}">{{ block.ctabutton.text }}</a>
+            {% endif %}
+        </div>
+        <div class="header-image">
+            {% if block.headerImg.one() is not empty %}
+                {% set headerImage = block.headerImg.one() %}
+                {% set image = headerImage.image.one() %}
+                {% set imageAlt = headerImage.imageAlt %}
+
+                <img src="{{ image ? image.url }}" alt="{{ imageAlt }}" class="">
+            {% endif %}
+        </div>
+    </div>
+</div>

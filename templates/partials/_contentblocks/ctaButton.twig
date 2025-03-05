@@ -1,0 +1,20 @@
+{# <div class="cta container-self cta-standard ctaButton">
+    <div class="circle-cta">
+        <div class="circle-cta-button {% if currentLocale == 'nl-BE' %}button-nl{% endif %}">
+            {% switch currentLocale %}
+            {% case 'nl-BE' %}
+                <a href="{{ block.ctaButton.url }}">
+                    <p>{{ block.ctaButton.title }}</p>
+                    <div class="stripe"></div>
+                </a>
+                <a class="ctaLink" href="{{ block.ctaLink.url }}"><p>{{ block.ctaLink.title }}</p></a>
+            {% case 'en-BE' %}
+                <a href="{{ block.ctaButton.url }}">
+                    <p>{{ block.ctaButton.title }}</p>
+                    <div class="stripe"></div>
+                </a>
+                <a class="ctaLink" href="{{ block.ctaLink.url }}"><p>{{ block.ctaLink.title }}</p></a>
+            {% endswitch %}
+        </div>
+    </div>
+</div> #}

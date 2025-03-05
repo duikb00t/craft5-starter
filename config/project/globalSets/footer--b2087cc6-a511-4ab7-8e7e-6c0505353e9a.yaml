@@ -1,0 +1,28 @@
+fieldLayouts:
+  b7dc93d7-cf7e-42ce-a26d-651f8daa928f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-02-08T22:06:47+00:00'
+            elementCondition: null
+            fieldUid: ea43f952-97d6-455a-b99e-80cfbda38ea3 # Footer elements
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0653363-aebe-4bf8-93ab-c7e2ceb0c42e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Footer
+        uid: 39d64d82-56b1-416a-a91f-5e9496c90637
+        userCondition: null
+handle: footer
+name: Footer
+sortOrder: 2

@@ -1,0 +1,76 @@
+{# props:
+ #
+ # - block
+ # - - heading, body, image, imagePosition, cta
+ #
+ #}
+ <div class="js-smooth-section page-heading">
+    <div class="d-flex">
+        <div class="header-text">
+            {% if block.heading %}
+                {{ block.heading }}
+            {% endif %}
+            {{ block.body }}
+            {% if block.ctabutton.text %}
+                <a class="cta-green" href="{{ block.ctabutton.url }}">{{ block.ctabutton.text }}</a>
+            {% endif %}
+        </div>
+        <div class="toonzaal-gallery">
+            <div class="gallery-big-img">
+                {% if block.bigimage.one() is not empty %}
+                    {% set bigImage = block.bigimage.one() %}
+                    {% set image = bigImage.image.one() %}
+                    {% set imageAlt = bigImage.imageAlt %}
+                        <img id="expandedImg" src="{{ image ? image.url('gallery') }}" alt="{{ imageAlt }}" class="gallery-img-big">
+                {% endif %}
+            </div>
+            <div class="gallery-row">
+                {% if block.thumbnails.one() is not empty %}
+                    {% set Thumbnails = block.thumbnails.one() %}
+                    {% set images = Thumbnails.image.all() %}
+                    {% set imageAlt = Thumbnails.imageAlt %}
+                        {% if images|length > 0 %}
+                            {% for key, image in images %}        
+                                    <img src="{{ image ? image.getUrl('gallery') }}" alt="{{ imageAlt }}" class="gallery-img" onclick="myThumbnail(this);">
+                            {% endfor %}
+                        {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="gallery">
+            {% if block.thumbnails.one() is not empty %}
+                {% set Thumbnails = block.thumbnails.one() %}
+                {% set images = Thumbnails.image.all() %}
+                {% set imageAlt = Thumbnails.imageAlt %}
+                    {% if images|length > 1 %}
+                    <div class="gallery-container col-xl-6 order-2 order-xl-2 d-flex align-items-end">
+                        <div class="gallery">
+                            {% for key, image in images %}
+                                    <a class="{% if key == '0' %}gallery-link{% else %}d-none{% endif %}" data-fancybox="galleryApp" href="{{ image ? image.getUrl('gallery') }}" data-caption="Foto's verandas">
+                                        <img src="{{ image ? image.getUrl('gallery') }}" alt="appartements" class="img-fluid img-voortgang">
+                                    </a>
+                            {% endfor %}
+                            {# <a class="d-none" data-fancybox="galleryApp" href="{{ image ? image.url }}" data-caption="2/8">
+                                <img src="{{ image ? image.url }}" alt="appartements" class="img-fluid img-voortgang">
+                            </a> #}
+                        </div>
+                    </div>
+                    {% else %}
+                        {% for key, image in images %}
+                        <figure class="c-image col-xl-6 order-2 order-xl-2">
+                            <img src="{{ image ? image.getUrl('gallery') }}" alt="{{ imageAlt }}" class="image-right">
+                        </figure>
+                        {% endfor %}
+                    {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+function myThumbnail(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  expandImg.src = imgs.src;
+  expandImg.parentElement.style.display = "block";
+}
+</script>

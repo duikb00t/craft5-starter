@@ -1,0 +1,104 @@
+{% set menuItems = craft.entries()
+    .section('navigation')
+    .level(1)
+    .all() %}
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-white text-xl font-bold">{{ craft.app.sites.currentSite.name }}</a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-6" id="main-menu">
+            {% for item in menuItems %}
+                {% set itemUrl = item.navLink.url %}
+                {% set itemLabel = item.navlabel ?? item.title %}
+                {% set children = item.children.all() %}
+
+                {% if children %}
+                    <div class="relative group">
+                        <a href="{{ itemUrl }}" class="text-white hover:text-gray-300 flex items-center space-x-1">
+                            <span>{{ itemLabel }}</span>
+                            <span class="text-gray-400 group-hover:text-white">▼</span>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+
+                                {% for child in children %}
+                                    {% set childUrl = child.navLink.url ?? '#' %}
+                                    {% set childLabel = child.navlabel ?? child.title %}
+                                    <a href="{{ childUrl }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{ childLabel }}</a>
+                                {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="{{ itemUrl }}" class="text-white hover:text-gray-300">{{ itemLabel }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-white" id="menu-button">
+            &#9776;
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden flex flex-col space-y-2 mt-2" id="mobile-menu">
+        {% for item in menuItems %}
+            {% set itemEntry = item.navLink.element %}
+            {% set itemUrl = itemEntry.url %}
+            {% set itemLabel = item.navlabel ?? item.title %}
+            {% set itemEntry = craft.entries().id(item.id).one() %}
+            {% set children = item.children.all() %}
+
+            {% if children %}
+                <div class="relative">
+                    <div class="flex justify-between items-center w-full px-4 py-2 text-white hover:bg-gray-700">
+                        <a href="{{ itemUrl }}" class="flex-1">{{ itemLabel }}</a>
+                        <button class="mobile-dropdown-toggle text-white">▼</button>
+                    </div>
+                    <div class="hidden flex flex-col bg-gray-700 rounded-lg mt-1 mobile-dropdown">
+                        {% for child in children %}
+                            {% set childUrl = child.url %}
+                            {% set childLabel = child.navlabel ?? child.title %}
+                            <a href="{{ childUrl }}" class="block px-4 py-2 text-white hover:bg-gray-600">{{ childLabel }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <a href="{{ itemUrl }}" class="block px-4 py-2 text-white hover:bg-gray-700">{{ itemLabel }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</nav>
+
+<!-- JavaScript for Mobile Menu -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const dropdownToggles = document.querySelectorAll(".mobile-dropdown-toggle");
+
+        // Toggle main mobile menu
+        menuButton.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // Handle dropdown toggles
+        dropdownToggles.forEach(button => {
+            button.addEventListener("click", function () {
+                const dropdown = this.parentElement.nextElementSibling;
+
+                // Close any open submenus except the one being clicked
+                document.querySelectorAll(".mobile-dropdown").forEach(submenu => {
+                    if (submenu !== dropdown) {
+                        submenu.classList.add("hidden");
+                        submenu.previousElementSibling.classList.remove("active");
+                    }
+                });
+
+                // Toggle the clicked submenu
+                dropdown.classList.toggle("hidden");
+                this.classList.toggle("active");
+            });
+        });
+    });
+</script>

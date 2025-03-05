@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 1a841a1d-c6e0-445c-a30f-41c587cc3743 # 404
+handle: errorpage
+maxAuthors: 1
+name: '404'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primaire invoer-pagina'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Betonbouw en grondwerken - Lavens
+    enabledByDefault: true
+    hasUrls: true
+    template: 404-error.twig
+    uriFormat: 404-error
+type: single

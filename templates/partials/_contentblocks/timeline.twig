@@ -1,0 +1,30 @@
+{# props:
+ #
+ # - block
+ # - - heading
+ # - - body
+ #
+ #}
+
+<div class="js-smooth-section page-heading timeline">
+    <div class="container timeline-container">
+        <div class="timeline-heading">
+            {% if block.heading %}
+                {{ block.heading }}
+            {% endif %}
+            {% if block.ctabutton.text %}
+                <a class="cta-green" href="{{ block.ctabutton.url }}">{{ block.ctabutton.text }}</a>
+            {% endif %}
+        </div>
+        <div class="timeline-text">
+            {{ block.body }}
+            {% if block.timelineimage.one() is not empty %}
+                {% set timelineImage = block.timelineimage.one() %}
+                {% set image = timelineImage.image.one() %}
+                {% set imageAlt = timelineImage.imageAlt %}
+
+                <img src="{{ image ? image.url }}" alt="{{ imageAlt }}" class="">
+            {% endif %}
+        </div>
+    </div>
+</div>

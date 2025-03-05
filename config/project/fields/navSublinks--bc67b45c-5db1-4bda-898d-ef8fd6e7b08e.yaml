@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: navSublinks
+instructions: null
+name: Sublinks
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    - d2408a6f-37bd-471d-92e3-d9267deb4710 # Menu Items
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

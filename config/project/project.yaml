@@ -1,0 +1,439 @@
+dateModified: 1741040106
+email:
+  fromEmail: dekennes@gmail.com
+  fromName: 'Betonbouw en grondwerken - Lavens'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  fileUploads:
+    hasUrls: false
+    name: 'file uploads'
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: null
+  uploads:
+    hasUrls: false
+    name: Uploads
+    settings:
+      path: $DOCROOT/uploads
+    type: craft\fs\Local
+    url: null
+  web:
+    hasUrls: false
+    name: web
+    settings:
+      path: /var/www/html/web/uploads
+    type: craft\fs\Local
+    url: null
+meta:
+  __names__:
+    0fc41067-6d0d-4a7b-897b-772544f01fa9: 'Show in Menu' # Show in Menu
+    1a5c74d4-7b0e-4d0b-9d95-0f6831237fab: Content # Content
+    1a841a1d-c6e0-445c-a30f-41c587cc3743: '404' # 404
+    2fe9e929-df80-4425-b35b-5b4330c945b3: Uploads # Uploads
+    5bac034d-3c72-456c-9c3b-f09ba65482ee: 'Footer Adres' # Footer Adres
+    5c1171ae-15de-487b-ab25-55cd8752a28d: Submenu # Submenu
+    6e35ac18-f4e7-4772-8dd6-080cdd0efea9: Link # Link
+    9ddd51fe-ec67-4684-b83e-c334ee920f66: 'Content Block Image' # Content Block Image
+    12ee1616-7b38-4caa-a85b-49d456e0c9fa: Pages # Pages
+    38a8e666-e3bc-45ce-ba85-0dda8e172c54: 'Betonbouw en grondwerken - Lavens' # Betonbouw en grondwerken - Lavens
+    62f8d3f2-1d4c-4ee3-85ea-739ac7cb45bb: 'Footer Telefoon' # Footer Telefoon
+    87a7d348-af21-41c0-b27f-034a79381253: Heading # Heading
+    88ee5a92-a6cc-48ad-9d2e-277bf7f5bcb0: 'Link Block' # Link Block
+    99ccb2ea-b9c7-4e56-9ac6-198e11ee5ba4: 'Text + image' # Text + image
+    710bf09b-4c84-48be-a381-a26df0333086: Default # Default
+    769d91eb-1473-4b3d-94ab-4457fd4d9edf: Banner # Banner
+    796b21ff-3ef3-4fd8-b7b3-29a35c5e48e9: Homepage # Homepage
+    823a45f9-c099-4cac-a046-461a542bbab2: 'Vacancy Listing' # Vacancy Listing
+    900c6ac3-3d38-4a2f-8f31-19e9533df10e: 'Public Schema' # Public Schema
+    3950c638-52fb-4fb3-bf56-5090c6f6b3a3: Header # Header
+    048955de-8ce7-4ffb-8c16-afc4aaa82aa8: 'Footer Elements entry type' # Footer Elements entry type
+    66075bdc-827d-4275-a8c1-9c350786e7cc: Heading # Heading
+    369598e1-97c9-42a1-b227-d77a67cd1fdc: 'Footer Email' # Footer Email
+    7517034a-1d2e-4383-8ba6-19f2a7a6a833: Simple # Simple
+    94655389-9aaa-41cf-a493-c34178a44ec2: Intro # Intro
+    a4c77a79-3694-4226-8177-aeaacfe9e29c: navLabel # navLabel
+    a6558acb-fecd-494c-8123-22d7c4fb062e: Home # Home
+    b9aa5b6c-d612-43a5-8358-5549be3d2da7: 'Dropdown Label' # Dropdown Label
+    b159d43e-97ba-408b-b956-290531beb577: Logo # Logo
+    b2087cc6-a511-4ab7-8e7e-6c0505353e9a: Footer # Footer
+    bc9d6031-b5f7-4593-8c92-49823651a56c: 'Hero Slider - Banner' # Hero Slider - Banner
+    bc67b45c-5db1-4bda-898d-ef8fd6e7b08e: Sublinks # Sublinks
+    bd965774-d989-4ad8-9b4e-2b31bc5ca453: 'Dropdown Block' # Dropdown Block
+    bf111906-4e13-4842-9f2c-55c211a9def3: 'Slider Image' # Slider Image
+    d3e33d75-0505-4fc0-bc07-acefbb69a249: 'Betonbouw en grondwerken - Lavens' # Betonbouw en grondwerken - Lavens
+    d64ae2db-e6e5-4c44-954c-57bd79fc6321: 'CTA Button' # CTA Button
+    d2408a6f-37bd-471d-92e3-d9267deb4710: 'Menu Items' # Menu Items
+    d43647bc-a0bb-44e0-885d-3ebd33319bc1: 'Text + CTA' # Text + CTA
+    db65710f-c642-4673-8649-177516332d5b: Intro # Intro
+    dea61876-002c-4d8a-8274-05e5f2bd9a85: Contact # Contact
+    df402d3e-ddfa-4994-a215-f5ad8cce0e7d: Body # Body
+    e047ff7f-8934-4fe5-bcb7-6d562b70ebfa: Vacancies # Vacancies
+    e2c006d6-fafe-465b-8f2d-e476fcc83fe5: '404' # 404
+    e77b2b31-cf96-495c-9bf1-f7005040e690: Navigation # Navigation
+    e359e1e8-8a0e-4f38-addb-ac8d7fe7c095: 'footer Facebook' # footer Facebook
+    e2770224-47ca-4398-ab99-efb0b611a39e: 'Header text' # Header text
+    ea43f952-97d6-455a-b99e-80cfbda38ea3: 'Footer elements' # Footer elements
+    f3db99ba-0b03-4ef1-a005-54c17e98b856: Vacancies # Vacancies
+    f34aad52-4756-44e0-b970-78813ee16a13: Slider # Slider
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  freeform:
+    edition: express
+    enabled: true
+    schemaVersion: 5.4.2
+    settings:
+      alertNotificationRecipients: null
+      allowDashesInFieldHandles: false
+      allowFileTemplateEdit: true
+      autoScroll: true
+      autoScrollToErrors: true
+      badgeType: all
+      blockedEmails: null
+      blockedEmailsError: 'Invalid Email Address'
+      blockedIpAddresses: null
+      blockedKeywords: null
+      blockedKeywordsError: 'Invalid Entry Data'
+      bypassSpamCheckOnLoggedInUsers: false
+      clientDigestFrequency: 1
+      clientDigestRecipients: null
+      defaultFromEmail: '{{ craft.app.projectConfig.get(''email.fromEmail'') }}'
+      defaultFromName: '{{ craft.app.projectConfig.get(''email.fromName'') }}'
+      defaultView: submissions
+      defaults:
+        __assoc__:
+          -
+            - previewHtml
+            - true
+          -
+            - twigInHtml
+            - true
+          -
+            - twigIsolation
+            - true
+          -
+            - includeSampleTemplates
+            - true
+          -
+            - notifications
+            -
+              __assoc__:
+                -
+                  - admin
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - conditional
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - userSelect
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - emailField
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+          -
+            - settings
+            -
+              __assoc__:
+                -
+                  - general
+                  -
+                    __assoc__:
+                      -
+                        - formType
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - submissionTitle
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - '{{ dateCreated|date("Y-m-d H:i:s") }}'
+                      -
+                        - formattingTemplate
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - basic-light/index.twig
+                -
+                  - dataStorage
+                  -
+                    __assoc__:
+                      -
+                        - storeData
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - defaultStatus
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 2
+                      -
+                        - collectIp
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                -
+                  - processing
+                  -
+                    __assoc__:
+                      -
+                        - ajax
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - showIndicator
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - showText
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - processingText
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - Processing...
+                -
+                  - successAndErrors
+                  -
+                    __assoc__:
+                      -
+                        - successBehavior
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - reload
+                      -
+                        - returnUrl
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - successTemplate
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - successMessage
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 'Form has been submitted successfully!'
+                      -
+                        - errorMessage
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 'Sorry, there was an error submitting the form. Please try again.'
+                -
+                  - limits
+                  -
+                    __assoc__:
+                      -
+                        - duplicateCheck
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - no_limit
+      digestFrequency: 1
+      digestOnlyOnProduction: false
+      digestRecipients: null
+      displayFeed: true
+      emailTemplateDefault: database
+      emailTemplateDirectory: null
+      emailTemplateStorageType: files_database
+      exportHandlesAsNames: ''
+      exportLabels: ''
+      fillWithGet: ''
+      footerScripts: false
+      formFieldShowOnlyAllowedForms: '1'
+      formSubmitDisable: true
+      formSubmitExpiration: null
+      formTemplateDirectory: null
+      formattingTemplate: basic-light/index.twig
+      minimumSubmitTime: null
+      pluginName: null
+      purgableSpamAgeInDays: null
+      purgableSubmissionAgeInDays: null
+      purgableUnfinalizedAssetAgeInMinutes: '180'
+      queuePriority: null
+      rememberPageSubmitOrder: true
+      removeNewlines: ''
+      renderFormHtmlInCpViews: true
+      saveFormSessionLimit: 10
+      saveFormTtl: 30
+      scriptInsertLocation: footer
+      scriptInsertType: files
+      sessionContext: payload
+      sessionContextCount: 100
+      sessionContextSecret: ''
+      sessionContextTimeToLiveMinutes: 180
+      sessionEntryMaxCount: 50
+      sessionEntryTTL: 10800
+      showErrorsForBlockedEmails: false
+      showErrorsForBlockedKeywords: false
+      sitesEnabled: false
+      spamFolderEnabled: true
+      spamProtectionBehavior: simulate_success
+      submissionThrottlingCount: null
+      submissionThrottlingTimeFrame: null
+      successTemplateDirectory: null
+      updateSearchIndexes: '1'
+      useQueueForEmailNotifications: false
+      useQueueForIntegrations: false
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.0.0
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: 'Betonbouw en grondwerken - Lavens'
+  retryDuration: null
+  schemaVersion: 5.6.0.2
+  timeZone: Europe/Brussels
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

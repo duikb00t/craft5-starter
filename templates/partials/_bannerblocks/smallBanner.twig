@@ -1,0 +1,6 @@
+{% set src = "/assets/images" %}
+
+<div class="standaart-banner">
+    {% set image = block.image.one() %}
+    <img src="{{ image ? image.url }}" alt="{{ block.imageAlt }}">
+</div>

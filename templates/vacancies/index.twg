@@ -1,0 +1,26 @@
+{#
+# Frontpage template
+# ------------------
+#
+#}
+
+{% extends "_layout" %}
+{% set title = "Home" %}
+
+
+{% block content %}
+    <div class="contact">
+        {% set entries = craft.entries({
+            section: 'vacancies'
+        }).all() %}
+
+        {% for entry in entries %}
+            <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+            <div>
+                {{ entry.body|raw }}
+            </div>
+        {% endfor %}
+
+
+    </div>
+{% endblock %}

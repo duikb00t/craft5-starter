@@ -1,0 +1,68 @@
+{#
+# - block
+# - - carousel
+# - image
+#}
+
+{% set src = "/assets/images" %}
+
+{% if block.carousel|length > 0 %}
+    {% set carouselData = block.carousel.all() %}
+    <div class="glide">
+        <div data-glide-el="track" class="glide__track">
+            <ul class="glide__slides">
+                {% for slide in carouselData %}
+                    {% if slide.image.one() is not empty %}
+                        {% set image = slide.image.one()  %}
+                        {% set counter = ( counter | default(0) ) + 1 %}
+                        <li class="glide__slide {{ counter }}"><img src="{{ image ? image.getUrl('scale') }}" alt="{{ slide.imageAlt }}" class="img-fluid"></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="glide-controls">
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Arrow left">
+                    <svg width="10" height="15" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <polyline points="7.5 2.5 2.5 7.5 7.5 12.5" stroke="rgba(255,255,255,1)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round">&gt;</polyline>
+                    </svg>
+                </button>
+            </div>
+            <div class="glide__bullets" id="glide__bullets" data-glide-el="controls[nav]"></div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Arrow right">
+                    <svg width="10" height="15" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <polyline points="2.5 2.5 7.5 7.5 2.5 12.5" stroke="rgba(255,255,255,1)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round">&lt;</polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        {% if block.ctaCarousel|length > 0 %}
+            {% set ctaCarouselData = block.ctaCarousel.all() %}
+            {% for ctaSlide in ctaCarouselData %}
+                {% if ctaSlide.ctaTitel and ctaSlide.ctaButton %}
+                    {% if block.bannerText %}
+                        <div class="banner-text">
+                            <p>{{ block.bannerText }}</p>
+                        </div>
+                    {% endif %}
+                    <div class="cta-banner">
+                        <div class="cta-banner-content">
+                            <h1 class="cta-banner-titel">{{ ctaSlide.ctaTitel }}</h1>
+                            {% if ctaSlide.ctaSubtitel is not empty %}
+                                <h2>{{  ctaSlide.ctaSubtitel }}</h2>
+                            {% endif %}
+                            <a class="cta-banner-button-circle" href="{{ ctaSlide.ctaButton }}">{{ ctaSlide.ctaButton.title }}</a>
+                            <a class="cta-banner-button-circle" href="{{ ctaSlide.ctaButton2 }}">{{ ctaSlide.ctaButton2.title }}</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <img class="mouse-scroll" src="{{ craft.app.sites.primarySite.baseUrl }}uploads/mouse.png" alt="scroll down">
+    </div>
+{% endif %}
+
+

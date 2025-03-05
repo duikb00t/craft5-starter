@@ -1,0 +1,101 @@
+color: null
+fieldLayouts:
+  22c0a322-3003-4415-94fa-de141248e93b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-02-08T22:06:40+00:00'
+            elementCondition: null
+            fieldUid: b159d43e-97ba-408b-b956-290531beb577 # Logo
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 39ed506b-6ec1-4002-8766-04add93f4413
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-08T22:08:35+00:00'
+            elementCondition: null
+            fieldUid: 5bac034d-3c72-456c-9c3b-f09ba65482ee # Footer Adres
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 659c99bc-d32c-4835-9d3e-ea8e3f8745bb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-08T22:10:29+00:00'
+            elementCondition: null
+            fieldUid: 62f8d3f2-1d4c-4ee3-85ea-739ac7cb45bb # Footer Telefoon
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1b6400c-1c55-460e-b529-87c5869fbc48
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-08T22:10:29+00:00'
+            elementCondition: null
+            fieldUid: 369598e1-97c9-42a1-b227-d77a67cd1fdc # Footer Email
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9db08de1-7278-498b-9014-1f59d7c0e904
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-08T22:14:09+00:00'
+            elementCondition: null
+            fieldUid: e359e1e8-8a0e-4f38-addb-ac8d7fe7c095 # footer Facebook
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b510b14-087b-461e-bdce-7792efd6c54c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ca33b67f-30a3-41c9-a57f-a9b629f56d47
+        userCondition: null
+handle: footerElementsEntryType
+hasTitleField: false
+icon: null
+name: 'Footer Elements entry type'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

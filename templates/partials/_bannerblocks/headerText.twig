@@ -1,0 +1,18 @@
+{# props:
+ #
+ # - block
+ # - - heading
+ # - - body
+ #
+ #}
+
+<div class="js-smooth-section page-heading">
+    <div class="container">
+        <div class="header-text">
+            {% if block.heading %}
+                {{ block.heading }}
+            {% endif %}
+            {{ block.body }}
+        </div>
+    </div>
+</div>

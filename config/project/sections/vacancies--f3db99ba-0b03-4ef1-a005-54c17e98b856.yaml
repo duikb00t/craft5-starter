@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 823a45f9-c099-4cac-a046-461a542bbab2 # Vacancy Listing
+handle: vacancies
+maxAuthors: 1
+name: Vacancies
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Betonbouw en grondwerken - Lavens
+    enabledByDefault: true
+    hasUrls: true
+    template: vacancies/_entry.twig
+    uriFormat: 'vacancies/{slug}'
+type: channel

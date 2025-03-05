@@ -1,0 +1,29 @@
+# generic files
+/.idea
+.DS_Store
+
+# project secrets
+.env*
+/.env
+/config/craft/license.key
+
+# package managers
+/vendor
+/node_modules
+
+# storage
+/storage/*
+!/storage/.gitkeep
+!/storage/rebrand/
+!/storage/rebrand/**
+
+# cpresources
+/web/cpresources/*
+!/web/cpresources/.gitkeep
+
+# dist
+/web/dist/*
+
+# assets
+/web/assets/images/*
+/web/assets/icons/transforms/*

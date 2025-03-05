@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: footerElements
+instructions: null
+name: 'Footer elements'
+searchable: false
+settings:
+  contentTable: ''
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 048955de-8ce7-4ffb-8c16-afc4aaa82aa8 # Footer Elements entry type
+  includeTableView: false
+  maxEntries: 1
+  minEntries: 1
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField
