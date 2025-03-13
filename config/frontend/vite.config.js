@@ -3,6 +3,8 @@ import legacy from "@vitejs/plugin-legacy";
 import path from "path";
 import compression from "vite-plugin-compression";
 import vue from "@vitejs/plugin-vue";
+import copy from 'rollup-plugin-copy'
+
 
 export default defineConfig(({ command, mode }) => {
     return {
@@ -33,6 +35,11 @@ export default defineConfig(({ command, mode }) => {
                     compilerOptions: {},
                 },
             }),
+            copy({
+                targets: [
+                    { src: 'assets/images', dest: 'web/'}
+                ]
+            })
         ],
         resolve: {
             alias: {
