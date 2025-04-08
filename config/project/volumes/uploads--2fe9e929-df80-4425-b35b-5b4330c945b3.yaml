@@ -39,11 +39,11 @@ fieldLayouts:
         name: Content
         uid: 1d9e25ea-564a-4cd0-a14b-67b14f04cf6b
         userCondition: null
-fs: web
+fs: uploads
 handle: uploads
 name: Uploads
 sortOrder: 1
-subpath: uploads
+subpath: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
 transformFs: ''

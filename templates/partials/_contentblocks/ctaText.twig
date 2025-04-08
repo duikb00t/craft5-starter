@@ -1,9 +1,16 @@
 <div class="js-smooth-section page-ctatext">
     <div class="container">
         <div class="header-text">
-            <h2>{{ block.heading|striptags|raw }}</h2>
-            {{ block.body|raw }}
-            <a class="ctatext-button" href="{{ block.ctaButton.url }}"><button>{{ block.ctaButton.title }}</button></a>
+            <h2 class="text-4xl font-extrabold">{{ block.heading|striptags|raw }}</h2>
+            <p class="my-4 text-lg text-gray-500">{{ block.body|raw }}</p>
+
+            {% set cta = block.ctaButton ?? null %}
+
+            {% if cta and cta.url ?? false and cta.title ?? false %}
+                <a class="ctatext-button" href="{{ cta.url }}">
+                    <button>{{ cta.title }}</button>
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>

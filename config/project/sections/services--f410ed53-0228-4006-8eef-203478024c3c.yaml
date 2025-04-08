@@ -1,0 +1,33 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 710bf09b-4c84-48be-a381-a26df0333086 # Default
+  -
+    uid: d465e21b-70b2-4dc6-b3a4-fa85f7da2d74 # Service Subpage
+handle: services
+maxAuthors: 1
+name: Services
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primaire invoer-pagina'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Imprenta
+    enabledByDefault: true
+    hasUrls: true
+    template: services/_entry.twig
+    uriFormat: '{parent.uri ?? ''services''}/{slug}'
+structure:
+  maxLevels: null
+  uid: b94b4ba0-056c-4169-b7c1-092bd66617b7
+type: structure

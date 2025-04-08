@@ -1,0 +1,4 @@
+sprout-module-core:
+  modules:
+    BarrelStrength\Sprout\redirects\RedirectsModule:
+      enabled: true

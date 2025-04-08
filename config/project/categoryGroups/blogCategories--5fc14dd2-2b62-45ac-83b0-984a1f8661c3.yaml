@@ -1,0 +1,50 @@
+defaultPlacement: end
+fieldLayouts:
+  1088158d-49a8-48c0-9b99-f29f217698b7:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-10T20:09:51+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 72974cbd-09ba-4726-9e9a-baa436bee1f3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhoud
+        uid: d098e16f-6122-410d-af9f-53f79ef2caf4
+        userCondition: null
+handle: blogCategories
+name: 'Blog Categories'
+siteSettings:
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Imprenta
+    hasUrls: true
+    template: blog-categories/_category.twig
+    uriFormat: 'blog-categories/{slug}'
+structure:
+  maxLevels: null
+  uid: 7b40fcca-f8cc-4903-a2d4-4179d626263d

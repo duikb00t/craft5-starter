@@ -1,0 +1,85 @@
+color: null
+fieldLayouts:
+  b1f7e8dc-4897-4794-8dcd-96c6e4e99d09:
+    cardView:
+      - 'layoutElement:5d7bebe3-483b-4a55-b3c6-401994cd8dd0'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-16T21:34:44+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 97dbc49c-6f99-4238-b8ff-cc22ed3794a9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-16T21:42:01+00:00'
+            elementCondition: null
+            fieldUid: df402d3e-ddfa-4994-a215-f5ad8cce0e7d # Body
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d7bebe3-483b-4a55-b3c6-401994cd8dd0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-16T21:55:03+00:00'
+            elementCondition: null
+            fieldUid: bf111906-4e13-4842-9f2c-55c211a9def3 # Slider Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 246d1b45-1164-45bd-9b4a-2667d0d8b56b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhoud
+        uid: 2395847a-52b8-4b01-852e-7ab888adc835
+        userCondition: null
+handle: projectSlide
+hasTitleField: true
+icon: image-polaroid
+name: 'Project Slide'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

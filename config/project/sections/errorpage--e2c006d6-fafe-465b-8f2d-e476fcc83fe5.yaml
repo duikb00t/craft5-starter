@@ -19,7 +19,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Betonbouw en grondwerken - Lavens
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Imprenta
     enabledByDefault: true
     hasUrls: true
     template: 404-error.twig

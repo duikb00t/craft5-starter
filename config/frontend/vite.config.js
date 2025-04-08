@@ -34,12 +34,12 @@ export default defineConfig(({ command, mode }) => {
                 template: {
                     compilerOptions: {},
                 },
-            }),
-            copy({
+            })
+            /*copy({
                 targets: [
                     { src: 'assets/images', dest: 'web/'}
                 ]
-            })
+            })*/
         ],
         resolve: {
             alias: {

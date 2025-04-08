@@ -1,8 +1,19 @@
-<div class="js-smooth-section page-ctatext">
-    <div class="container">
-        <div class="section-text">
-            {{ block.text }}
-            <a class="ctatext-button" href="{{ block.cta.url }}"><button>{{ block.cta.title }}</button></a>
+{% set intro = craft.entries.section('intro').one() %}
+
+{% if intro %}
+    <div class="js-smooth-section page-ctatext">
+        <div class="container">
+            <div class="section-text">
+                {{ intro.body|raw }}
+
+                {% set cta = intro.ctaButton ?? null %}
+
+                {% if cta and cta.url ?? false and cta.text ?? false %}
+                    <a class="ctatext-button" href="{{ cta.url }}">
+                        <button>{{ cta.text }}</button>
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
+{% endif %}

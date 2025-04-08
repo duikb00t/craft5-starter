@@ -1,0 +1,17 @@
+{% extends "_layout.twig" %}
+
+{% set title = "Blog" %}
+
+{% block content %}
+    <h1>{{  title }}</h1>
+    <ul>
+        {% set posts = craft.entries.section('blog').limit(10).all() %}
+
+        {% for post in posts %}
+            <li>
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <p>{{ post.excerpt }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

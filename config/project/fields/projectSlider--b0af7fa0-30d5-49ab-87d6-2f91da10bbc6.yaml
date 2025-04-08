@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: projectSlider
+instructions: null
+name: 'Project Slider'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - ba1abcd0-a6f3-4e9d-9c02-1363c4a5b4a0 # Project Slide
+  includeTableView: false
+  maxEntries: 999
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: index
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

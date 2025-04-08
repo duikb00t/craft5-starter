@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="{{ currentLocale }}">
 <head>
-    <title>{{ title }}</title>
+    <title>{{ title ?? '' }} | {{ siteName }}</title>
     <meta charset="utf-8" />
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="author" content="{{ siteName }}">
     <meta name="copyright" content="WK - Ward Kennes"/>
-    <meta property="og:title" content="{{ title }}">
+    <meta property="og:title" content="{{ title ?? '' }} | {{ siteName }}">
     <meta property="og:description" content="">
     <meta property="og:image" content="{{ craft.app.sites.primarySite.baseUrl }}/uploads/og-image.jpg">
     <meta property="og:url" content="{{ craft.app.sites.primarySite.baseUrl }}">
@@ -54,11 +54,6 @@
 </main>
 {# Footer #}
 {{ include('partials/components/_footer') }}
-
-{#{{ craft.twigpack.includeJsModule("/dist/main.js") }}#}
---
-{{ dump(craft.vite) }}
 {{ craft.vite.script("assets/js/main.js") }}
---
 </body>
 </html>

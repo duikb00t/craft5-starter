@@ -3,7 +3,7 @@ enabled: true
 handle: default
 hasUrls: true
 language: nl-BE
-name: 'Betonbouw en grondwerken - Lavens'
+name: Imprenta
 primary: true
-siteGroup: 38a8e666-e3bc-45ce-ba85-0dda8e172c54 # Betonbouw en grondwerken - Lavens
+siteGroup: 38a8e666-e3bc-45ce-ba85-0dda8e172c54 # $DDEV_PROJECT
 sortOrder: 1

@@ -2,13 +2,14 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
+    "barrelstrength/sprout-redirects": "5.0.3",
     "craftcms/ckeditor": "4.6.0",
-    "craftcms/cms": "5.6.10.2",
+    "craftcms/cms": "5.6.14",
     "nystudio107/craft-twigpack": "^5.0.0",
     "nystudio107/craft-vite": "^5.0.1",
-    "solspace/craft-freeform": "5.9.15",
+    "solspace/craft-freeform": "5.10.5",
     "verbb/field-manager": "^4.0.3",
-    "verbb/super-table": "^4.0.3",
+    "verbb/super-table": "4.0.4",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

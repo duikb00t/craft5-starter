@@ -1,29 +1,72 @@
-# generic files
-/.idea
+# Vite
+dist
+
+# Sass
+*.sassc
+.sass-cache/*
+.sass-cache
+*.css.map
+
+# Javascript
+*.js.map
+
+# OS Files
 .DS_Store
+*.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# project secrets
-.env*
-/.env
-/config/craft/license.key
+# Craft CMS
+cpresources
+vendor
+.env
+.env.*.dev
+*.log
+storage/*
+!storage/rebrand
+license.key
+license.key.*
 
-# package managers
-/vendor
-/node_modules
+# Node / npm
+node_modules/
 
-# storage
-/storage/*
-!/storage/.gitkeep
-!/storage/rebrand/
-!/storage/rebrand/**
+# Caching
+web/cache
+public/cache
+public_html/cache
+httpdocs/cache
+cache/*
 
-# cpresources
-/web/cpresources/*
-!/web/cpresources/.gitkeep
 
-# dist
-/web/dist/*
+# Asset Source Folders
+web/cpresources/
+public/assets
+public_html/assets
+httpdocs/assets
 
-# assets
-/web/assets/images/*
-/web/assets/icons/transforms/*
+# Log files
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.ddev/.global_commands/
+web/uploads
+web/dist

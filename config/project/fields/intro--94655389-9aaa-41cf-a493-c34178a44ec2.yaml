@@ -13,7 +13,7 @@ settings:
           - uid
           - db65710f-c642-4673-8649-177516332d5b # Intro
   includeTableView: false
-  maxEntries: 1
+  maxEntries: 5
   minEntries: 1
   pageSize: 50
   propagationKeyFormat: null

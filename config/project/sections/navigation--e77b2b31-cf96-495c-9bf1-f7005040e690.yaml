@@ -4,6 +4,8 @@ entryTypes:
   -
     name: 'Menu Item'
     uid: d2408a6f-37bd-471d-92e3-d9267deb4710 # Menu Items
+  -
+    uid: d1e17a9b-d526-4e43-aa55-39e345a7a47c
 handle: navigation
 maxAuthors: 1
 name: Navigation
@@ -21,7 +23,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Betonbouw en grondwerken - Lavens
+  d3e33d75-0505-4fc0-bc07-acefbb69a249: # Imprenta
     enabledByDefault: true
     hasUrls: false
     template: null

@@ -1,0 +1,35 @@
+{#
+# Services specific template
+# ------------------
+#
+#}
+
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+
+{% block content %}
+       <h1 class="heading">{{ entry.title }}</h1>
+
+       {% if entry.children | length  %}
+           Show template with GRID
+              <ul>
+                     {% for child in entry.children %}
+                            <li>
+                               {% set image = child.featuredImage.one() %}
+
+                                <a href="{{ child.getUrl() }}">
+                                    {% if image %}
+                                        <img src="{{ image.url }}" alt="{{ entry.title }}" width="250">
+                                    {% else %}
+                                        <img src="#PLACEHOLDER#" alt="{{ entry.title }}">
+                                    {% endif %}
+                                   {{ child.title }}
+                                </a>
+                            </li>
+                     {% endfor %}
+              </ul>
+       {% else %}
+              Show template - NO NO grid
+       {% endif %}
+{% endblock %}

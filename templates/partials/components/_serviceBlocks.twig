@@ -1,0 +1,14 @@
+{% set serviceBlocks = craft.entries()
+    .section('services')
+    .level(1)
+    .all() %}
+
+<div>
+{% for item in serviceBlocks %}
+    <a href="{{ item.getUrl() }}">
+
+        <h2>{{ item.title }}</h2>
+    </a>
+
+{% endfor %}
+</div>

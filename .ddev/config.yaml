@@ -1,4 +1,4 @@
-name: lavensjoel
+name: imprenta
 type: craftcms
 docroot: web
 php_version: "8.2"
@@ -13,8 +13,6 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 corepack_enable: false
-
-# CraftCMS VITE  Ports
 web_extra_exposed_ports:
     - name: vite
       container_port: 5173

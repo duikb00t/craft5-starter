@@ -1,0 +1,20 @@
+{% for block in entry.contentblocks.all() %}
+    {% switch block.type %}
+    {% case 'headerText' %}
+        {% include 'partials/_contentblocks/headerText' %}
+    {% case 'headerTextImage' %}
+        {% include 'partials/_contentblocks/headerTextImage' %}
+    {% case 'textImage' %}
+        {% include 'partials/_contentblocks/textImage' %}
+    {% case 'ctaText' %}
+        {% include 'partials/_contentblocks/ctaText' %}
+    {% case 'textCta' %}
+        {% include 'partials/_contentblocks/textCta' %}
+    {% case 'gallery' %}
+        {% include 'partials/_contentblocks/gallery' %}
+    {% case 'timeline' %}
+        {% include 'partials/_contentblocks/timeline' %}
+    {% case 'ctaButtonAbsolute' %}
+        {% include 'partials/_contentblocks/ctaButtonAbsolute' %}
+    {% endswitch %}
+{% endfor %}

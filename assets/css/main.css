@@ -3,21 +3,26 @@
 @tailwind utilities;
 
 body {
-    background: red;
-    color: black;
+    color: green;
 }
 
 h2{
-    color:green;
-    background: pink;
+    color: #0a0d0f;
 }
 
 h3 {
     color: red;
-    background: blue;
 }
 
 
 header{
-    border: 5px solid green;
+}
+
+footer {
+    background: #0a0d0f;
+    background-size: 50%;
+}
+
+#main-menu .active {
+    background: red;
 }

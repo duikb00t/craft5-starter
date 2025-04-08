@@ -24,7 +24,7 @@ settings:
           __assoc__:
             -
               - allowRootRelativeUrls
-              - ''
+              - '1'
             -
               - allowAnchors
               - '1'

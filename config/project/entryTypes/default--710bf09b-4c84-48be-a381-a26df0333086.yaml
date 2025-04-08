@@ -35,7 +35,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Inhoud
+        name: Info
         uid: f364f9cb-d8bb-48ef-b975-4d45bc31edc3
         userCondition: null
       -
@@ -57,7 +57,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: test
+        name: Content
         uid: 554a83b1-728a-4b98-b746-ce0c59d64a11
         userCondition: null
 handle: default

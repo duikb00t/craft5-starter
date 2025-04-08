@@ -1,7 +1,43 @@
-dateModified: 1741040106
+dateModified: 1743754504
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      type: native
+    -
+      key: singles
+      type: native
+    -
+      heading: Kanalen
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:776d48de-4d02-4d51-9db6-a7259627fcde' # Blog
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      key: 'section:f3db99ba-0b03-4ef1-a005-54c17e98b856' # Vacancies
+      type: native
+    -
+      heading: Structuren
+      type: heading
+    -
+      key: 'section:e77b2b31-cf96-495c-9bf1-f7005040e690' # Navigation
+      type: native
+    -
+      key: 'section:12ee1616-7b38-4caa-a85b-49d456e0c9fa' # Pages
+      type: native
 email:
   fromEmail: dekennes@gmail.com
-  fromName: 'Betonbouw en grondwerken - Lavens'
+  fromName: Imprenta
   transportType: craft\mail\transportadapters\Sendmail
 fs:
   fileUploads:
@@ -12,19 +48,19 @@ fs:
     type: craft\fs\Local
     url: null
   uploads:
-    hasUrls: false
+    hasUrls: true
     name: Uploads
     settings:
-      path: $DOCROOT/uploads
+      path: $CRAFT_WEB_ROOT_UPLOAD_DIR
     type: craft\fs\Local
-    url: null
+    url: $PRIMARY_SITE_URL/uploads
   web:
-    hasUrls: false
+    hasUrls: true
     name: web
     settings:
       path: /var/www/html/web/uploads
     type: craft\fs\Local
-    url: null
+    url: 'https://imprenta.ddev.site/web/uploads'
 meta:
   __names__:
     0fc41067-6d0d-4a7b-897b-772544f01fa9: 'Show in Menu' # Show in Menu
@@ -33,16 +69,20 @@ meta:
     2fe9e929-df80-4425-b35b-5b4330c945b3: Uploads # Uploads
     5bac034d-3c72-456c-9c3b-f09ba65482ee: 'Footer Adres' # Footer Adres
     5c1171ae-15de-487b-ab25-55cd8752a28d: Submenu # Submenu
+    5fc14dd2-2b62-45ac-83b0-984a1f8661c3: 'Blog Categories' # Blog Categories
     6e35ac18-f4e7-4772-8dd6-080cdd0efea9: Link # Link
     9ddd51fe-ec67-4684-b83e-c334ee920f66: 'Content Block Image' # Content Block Image
     12ee1616-7b38-4caa-a85b-49d456e0c9fa: Pages # Pages
-    38a8e666-e3bc-45ce-ba85-0dda8e172c54: 'Betonbouw en grondwerken - Lavens' # Betonbouw en grondwerken - Lavens
+    38a8e666-e3bc-45ce-ba85-0dda8e172c54: $DDEV_PROJECT # $DDEV_PROJECT
     62f8d3f2-1d4c-4ee3-85ea-739ac7cb45bb: 'Footer Telefoon' # Footer Telefoon
     87a7d348-af21-41c0-b27f-034a79381253: Heading # Heading
+    87af3ebe-51ec-48e1-85fc-f58030340d63: Categories # Categories
     88ee5a92-a6cc-48ad-9d2e-277bf7f5bcb0: 'Link Block' # Link Block
     99ccb2ea-b9c7-4e56-9ac6-198e11ee5ba4: 'Text + image' # Text + image
+    424c04c2-e1f1-4d98-a817-5a64a55db526: Header # Header
     710bf09b-4c84-48be-a381-a26df0333086: Default # Default
     769d91eb-1473-4b3d-94ab-4457fd4d9edf: Banner # Banner
+    776d48de-4d02-4d51-9db6-a7259627fcde: Blog # Blog
     796b21ff-3ef3-4fd8-b7b3-29a35c5e48e9: Homepage # Homepage
     823a45f9-c099-4cac-a046-461a542bbab2: 'Vacancy Listing' # Vacancy Listing
     900c6ac3-3d38-4a2f-8f31-19e9533df10e: 'Public Schema' # Public Schema
@@ -54,15 +94,25 @@ meta:
     94655389-9aaa-41cf-a493-c34178a44ec2: Intro # Intro
     a4c77a79-3694-4226-8177-aeaacfe9e29c: navLabel # navLabel
     a6558acb-fecd-494c-8123-22d7c4fb062e: Home # Home
+    b0af7fa0-30d5-49ab-87d6-2f91da10bbc6: 'Project Slider' # Project Slider
+    b3ea05ad-338b-46a1-ba8c-54a3eef37d9f: 'Featured Image' # Featured Image
     b9aa5b6c-d612-43a5-8358-5549be3d2da7: 'Dropdown Label' # Dropdown Label
     b159d43e-97ba-408b-b956-290531beb577: Logo # Logo
+    b726e6a3-6ba3-439a-a560-11a5f7e0be4c: 'footer Instagram' # footer Instagram
     b2087cc6-a511-4ab7-8e7e-6c0505353e9a: Footer # Footer
+    ba1abcd0-a6f3-4e9d-9c02-1363c4a5b4a0: 'Project Slide' # Project Slide
     bc9d6031-b5f7-4593-8c92-49823651a56c: 'Hero Slider - Banner' # Hero Slider - Banner
     bc67b45c-5db1-4bda-898d-ef8fd6e7b08e: Sublinks # Sublinks
     bd965774-d989-4ad8-9b4e-2b31bc5ca453: 'Dropdown Block' # Dropdown Block
     bf111906-4e13-4842-9f2c-55c211a9def3: 'Slider Image' # Slider Image
-    d3e33d75-0505-4fc0-bc07-acefbb69a249: 'Betonbouw en grondwerken - Lavens' # Betonbouw en grondwerken - Lavens
+    c831ba3e-f080-458b-9c81-8c26b52b62d5: 'Project Slider' # Project Slider
+    c87287cb-455a-40c9-a6ee-55fb0827a89e: Excerpt # Excerpt
+    cc0cda22-0084-4cc6-b0bb-4ad82ddc44a1: 'Blog Post' # Blog Post
+    d3e33d75-0505-4fc0-bc07-acefbb69a249: Imprenta # Imprenta
     d64ae2db-e6e5-4c44-954c-57bd79fc6321: 'CTA Button' # CTA Button
+    d226dab4-90c9-4784-bd31-0f0119200bf5: 'Footer Contact' # Footer Contact
+    d465e21b-70b2-4dc6-b3a4-fa85f7da2d74: 'Service Subpage' # Service Subpage
+    d659ffc8-826e-4334-a065-37a268b7cb67: 'Header Sitelogo' # Header Sitelogo
     d2408a6f-37bd-471d-92e3-d9267deb4710: 'Menu Items' # Menu Items
     d43647bc-a0bb-44e0-885d-3ebd33319bc1: 'Text + CTA' # Text + CTA
     db65710f-c642-4673-8649-177516332d5b: Intro # Intro
@@ -71,11 +121,13 @@ meta:
     e047ff7f-8934-4fe5-bcb7-6d562b70ebfa: Vacancies # Vacancies
     e2c006d6-fafe-465b-8f2d-e476fcc83fe5: '404' # 404
     e77b2b31-cf96-495c-9bf1-f7005040e690: Navigation # Navigation
+    e134be12-be30-4dd4-8138-ac295fce043b: 'footer Linkedin' # footer Linkedin
     e359e1e8-8a0e-4f38-addb-ac8d7fe7c095: 'footer Facebook' # footer Facebook
     e2770224-47ca-4398-ab99-efb0b611a39e: 'Header text' # Header text
     ea43f952-97d6-455a-b99e-80cfbda38ea3: 'Footer elements' # Footer elements
     f3db99ba-0b03-4ef1-a005-54c17e98b856: Vacancies # Vacancies
     f34aad52-4756-44e0-b970-78813ee16a13: Slider # Slider
+    f410ed53-0228-4006-8eef-203478024c3c: Services # Services
 plugins:
   ckeditor:
     edition: standard
@@ -411,6 +463,10 @@ plugins:
       updateSearchIndexes: '1'
       useQueueForEmailNotifications: false
       useQueueForIntegrations: false
+  sprout-redirects:
+    edition: lite
+    enabled: true
+    schemaVersion: 5.0.2
   super-table:
     edition: standard
     enabled: true
@@ -426,7 +482,7 @@ plugins:
 system:
   edition: solo
   live: true
-  name: 'Betonbouw en grondwerken - Lavens'
+  name: 'Imprenta - Print Professionals'
   retryDuration: null
   schemaVersion: 5.6.0.2
   timeZone: Europe/Brussels
