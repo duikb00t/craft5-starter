@@ -1,4 +1,4 @@
-dateModified: 1743754504
+dateModified: 1744233628
 elementSources:
   craft\elements\Entry:
     -
@@ -67,6 +67,7 @@ meta:
     1a5c74d4-7b0e-4d0b-9d95-0f6831237fab: Content # Content
     1a841a1d-c6e0-445c-a30f-41c587cc3743: '404' # 404
     2fe9e929-df80-4425-b35b-5b4330c945b3: Uploads # Uploads
+    3e7105b7-7ec1-4014-a358-4c0b19b4e7af: Sidebar # Sidebar
     5bac034d-3c72-456c-9c3b-f09ba65482ee: 'Footer Adres' # Footer Adres
     5c1171ae-15de-487b-ab25-55cd8752a28d: Submenu # Submenu
     5fc14dd2-2b62-45ac-83b0-984a1f8661c3: 'Blog Categories' # Blog Categories

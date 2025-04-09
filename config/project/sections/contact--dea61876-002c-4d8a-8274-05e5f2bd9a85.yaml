@@ -2,9 +2,7 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: c831ba3e-f080-458b-9c81-8c26b52b62d5 # Project Slider
-  -
-    uid: 99ccb2ea-b9c7-4e56-9ac6-198e11ee5ba4 # Text + image
+    uid: 710bf09b-4c84-48be-a381-a26df0333086 # Default
 handle: contact
 maxAuthors: 1
 name: Contact

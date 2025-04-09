@@ -17,6 +17,11 @@ settings:
         -
           - uid
           - d43647bc-a0bb-44e0-885d-3ebd33319bc1 # Text + CTA
+    -
+      __assoc__:
+        -
+          - uid
+          - 3e7105b7-7ec1-4014-a358-4c0b19b4e7af # Sidebar
   includeTableView: false
   maxEntries: null
   minEntries: null

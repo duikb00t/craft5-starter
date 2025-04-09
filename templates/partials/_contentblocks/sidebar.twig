@@ -1,0 +1,11 @@
+{# props:
+ #
+ # - block
+ # - - title
+ # - - body
+ #
+ #}
+{% if block %}
+ <h1>{{ block.title }}</h1>
+ <p>{{ block.body }}</p>
+{% endif %}
