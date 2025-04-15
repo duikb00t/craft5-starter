@@ -1,17 +1,23 @@
 {% extends "_layout.twig" %}
 
 {% set title = "Blog" %}
+{% set posts = craft.entries.section('blog').limit(10).all() %}
 
 {% block content %}
-    <h1>{{  title }}</h1>
-    <ul>
-        {% set posts = craft.entries.section('blog').limit(10).all() %}
+    <div class="container mx-auto">
+        <h1>{{ title }}</h1>
 
-        {% for post in posts %}
-            <li>
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                <p>{{ post.excerpt }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+        {% if posts is not empty %}
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                        <p>{{ post.excerpt }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No blog posts available at the moment. Please check back later.</p>
+        {% endif %}
+    </div>
 {% endblock %}

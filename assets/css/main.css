@@ -6,6 +6,13 @@ body {
     color: green;
 }
 
+#topnav {
+    background-color: #FBF7CC;
+}
+#topnav a{
+    color: #0a0d0f;
+}
+
 h2{
     color: #0a0d0f;
 }

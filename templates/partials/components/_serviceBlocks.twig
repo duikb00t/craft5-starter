@@ -3,12 +3,20 @@
     .level(1)
     .all() %}
 
-<div>
-{% for item in serviceBlocks %}
-    <a href="{{ item.getUrl() }}">
-
-        <h2>{{ item.title }}</h2>
-    </a>
-
-{% endfor %}
+<div class="bg-white shadow-md rounded-lg p-6 flex flex-col sm:flex-row justify-between text-center">
+    {% for item in serviceBlocks %}
+        <a href="{{ item.getUrl() }}"
+           class="flex-1 px-4 py-2 border-r border-yellow-400 last:border-r-0 transition duration-200 hover:bg-yellow-50 hover:-translate-y-1 hover:shadow-lg rounded-md">
+            <div class="flex flex-col items-center space-y-2">
+                <!-- Replace with actual icon field or fallback -->
+                <div class="text-yellow-400 text-3xl">
+                    {{ item.icon ?? '🔧' }}
+                </div>
+                <div class="font-bold uppercase">{{ item.title }}</div>
+                <div class="text-sm text-gray-500">
+                    {{ item.text ?? 'lorum ipsum' }}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
 </div>

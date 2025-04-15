@@ -1,7 +1,7 @@
 {% set intro = craft.entries.section('intro').one() %}
 
 {% if intro %}
-    <div class="js-smooth-section page-ctatext">
+    <div class="js-smooth-section page-ctatext" style="background:red;">
         <div class="container">
             <div class="section-text">
                 {{ intro.body|raw }}

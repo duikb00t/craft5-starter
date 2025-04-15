@@ -1,0 +1,32 @@
+image: php:8.2
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Deploy to Combell (Craft CMS + VITE)
+          caches:
+            - composer
+            - node
+          script:
+            # Install Composer dependencies
+            - curl -sS https://getcomposer.org/installer | php
+            - php composer.phar install --no-dev --optimize-autoloader
+
+            # Install Node.js and build frontend
+            # - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+            - apt-get install -y nodejs
+            - npm install
+            - npm run build
+
+            # Set up SSH access to Combell
+            - mkdir -p ~/.ssh
+            - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+            - chmod 600 ~/.ssh/id_rsa
+            - ssh-keyscan staging.imprenta.be >> ~/.ssh/known_hosts
+
+            # Deploy backend using Deployer
+            - php vendor/bin/dep deploy production
+
+            # Deploy frontend assets to the correct Combell path
+            - rsync -avz ./dist/ user@staging.imprenta.be:/data/sites/web/imprenta/subsites/staging.imprenta.be/

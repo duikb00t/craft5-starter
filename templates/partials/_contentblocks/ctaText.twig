@@ -1,16 +1,29 @@
-<div class="js-smooth-section page-ctatext">
-    <div class="container">
-        <div class="header-text">
-            <h2 class="text-4xl font-extrabold">{{ block.heading|striptags|raw }}</h2>
-            <p class="my-4 text-lg text-gray-500">{{ block.body|raw }}</p>
+<div class="js-smooth-section page-ctatext py-12">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <!-- Left column: heading -->
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-extrabold">
+                    {{ block.heading|striptags|raw }}
+                </h2>
+            </div>
 
-            {% set cta = block.ctaButton ?? null %}
+            <!-- Right column: body and button -->
+            <div class="md:w-1/2">
+                <p class="my-4 text-lg text-gray-100">
+                    {{ block.body|raw }}
+                </p>
 
-            {% if cta and cta.url ?? false and cta.title ?? false %}
-                <a class="ctatext-button" href="{{ cta.url }}">
-                    <button>{{ cta.title }}</button>
-                </a>
-            {% endif %}
+                {% set cta = block.ctaButton ?? null %}
+
+                {% if cta and cta.url ?? false and cta.title ?? false %}
+                    <a href="{{ cta.url }}">
+                        <button class="mt-4 bg-white text-[#0b69a3] font-semibold py-2 px-6 rounded shadow hover:bg-gray-100 transition">
+                            {{ cta.title }}
+                        </button>
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

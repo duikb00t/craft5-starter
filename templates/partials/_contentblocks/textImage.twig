@@ -1,82 +1,69 @@
-{# props:
- #
- # - block
- # - - heading, body, image, imagePosition, cta
- #
- #}
-<div class="js-smooth-section text-image-section"> <!-- bootstrap class -->
-    <div class="container c-text-image container-self">
-        <div class="d-flex">
-            {% if block.imagePosition == 'left' %}
-                <div class="c-text text-left col-xl-6 order-1 order-xl-1">
-                    <div class="c-text-body">
-                        {% if block.heading %}
-                            {{ block.heading }}
-                        {% endif %}
+{#
+Props:
+- block.heading
+- block.body
+- block.cta (with url & text)
+- block.imagePosition
+- block.imageContent (with .image and .imageAlt)
+#}
+
+<div class="js-smooth-section py-12 text-black">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col xl:flex-row {{ block.imagePosition == 'left' ? '' : 'xl:flex-row-reverse' }} items-center gap-8">
+
+            <!-- Text Block -->
+            <div class="w-full xl:w-1/2">
+                <div class="space-y-4">
+                    {% if block.heading %}
+                        <h2 class="text-4xl font-extrabold">{{ block.heading }}</h2>
+                    {% endif %}
+                    <div class="prose max-w-none">
                         {{ block.body }}
-                        {% if block.cta.url is not empty %}
-                            <a href="{{ block.cta.url }}" class="cta-button button-left">                               
-                                    {{ block.cta.text }} 
-                            </a>
-                        {% endif %}
                     </div>
+
+                    {% if block.cta.url is not empty %}
+                        <a href="{{ block.cta.url }}" class="inline-block bg-black text-white font-semibold py-2 px-6 rounded shadow hover:bg-gray-800 transition">
+                            {{ block.cta.text }}
+                        </a>
+                    {% endif %}
                 </div>
+            </div>
 
-                {% if block.imageContent.one() is not empty %}
-                    {% set imageContent = block.imageContent.one() %}
-                    {% set image = imageContent.image.one() %}
-                    {% set imageAlt = imageContent.imageAlt %}
-
-                    <figure class="c-image col-xl-6 order-2 order-xl-2">
-                        <img src="{{ image ? image.url }}" alt="{{ imageAlt }}" class="image-left">
-                    </figure>
-                {% endif %}
-            {% else %}
-
-                {% if block.imageContent.one() is not empty %}
-                    {% set imageContent = block.imageContent.one() %}
+            <!-- Image / Gallery Block -->
+            <div class="w-full xl:w-1/2">
+                {% set imageContent = block.imageContent.one() ?? null %}
+                {% if imageContent %}
                     {% set images = imageContent.image.all() %}
-                    {% set imageAlt = imageContent.imageAlt %}
-                        {% if images|length > 1 %}
-                        <div class="gallery-container col-xl-6 order-2 order-xl-2 d-flex align-items-end">
-                            <div class="gallery">
-                                {% for key, image in images %}
-                                        <a class="{% if key == '0' %}gallery-link{% else %}d-none{% endif %}" data-fancybox="galleryApp" href="{{ image ? image.getUrl('gallery') }}" data-caption="Foto's verandas">
-                                            <img src="{{ image ? image.getUrl('gallery') }}" alt="appartements" class="img-fluid img-voortgang">
-                                        </a>
-                                {% endfor %}
-                                {# <a class="d-none" data-fancybox="galleryApp" href="{{ image ? image.url }}" data-caption="2/8">
-                                    <img src="{{ image ? image.url }}" alt="appartements" class="img-fluid img-voortgang">
-                                </a> #}
-                            </div>
-                        </div>
-                        {% else %}
+                    {% set imageAlt = imageContent.imageAlt ?? '' %}
+
+                    {% if images|length > 1 %}
+                        <div class="flex flex-wrap justify-center gap-4">
                             {% for key, image in images %}
-                            <figure class="c-image col-xl-6 order-2 order-xl-2">
-                                <img src="{{ image ? image.getUrl('gallery') }}" alt="{{ imageAlt }}" class="image-right">
-                            </figure>
+                                <a
+                                        href="{{ image.getUrl('gallery') }}"
+                                        data-fancybox="galleryApp"
+                                        data-caption="Foto's verandas"
+                                        class="{{ key > 0 ? 'hidden' : '' }}"
+                                >
+                                    <img src="{{ image.getUrl('gallery') }}" alt="{{ imageAlt }}" class="rounded-lg shadow max-w-full h-auto">
+                                </a>
                             {% endfor %}
-                        {% endif %}
+                        </div>
+                    {% else %}
+                        {% for image in images %}
+                            <figure>
+                                <img src="{{ image.getUrl('gallery') }}" alt="{{ imageAlt }}" class="rounded-lg shadow max-w-full h-auto">
+                            </figure>
+                        {% endfor %}
+                    {% endif %}
                 {% endif %}
-
-                <div class="c-text text-right col-xl-6 order-2 order-xl-2">
-                    <div class="c-text-body">
-                        {{ block.heading }}
-                        {{ block.body }}
-                        {% if block.cta ? block.cta.url %}
-                            <a href="{{ block.cta.url }}" class="cta-button button-right">
-                                {{ block.cta.text }}
-                            </a>
-                        {% endif %}
-                    </div>
-                </div>
-
-            {% endif %}
+            </div>
         </div>
     </div>
+
     {% if block.cta.url is not empty %}
-        <a href="{{ block.cta.url }}" class="cta-button button-left button-fixed">                               
-            {{ block.cta.text }} 
+        <a href="{{ block.cta.url }}" class="fixed bottom-4 right-4 z-50 bg-black text-white font-bold py-2 px-5 rounded shadow-lg hover:bg-gray-800 transition hidden lg:inline-block">
+            {{ block.cta.text }}
         </a>
     {% endif %}
 </div>
