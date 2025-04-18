@@ -8,13 +8,19 @@ set('http_user', 'imprentabe');
 set('ssh-type', 'native');
 set('ssh_multiplexing', true);
 
-// Config
+// Application Config
 set('application', 'craftcms5');
 set('repository', 'git@github.com:duikb00t/craft5-starter.git');
 set('git_tty', true);
 set('keep_releases', 4);
+
+// Shared files and directories
 set('shared_files', ['.env']);
-set('shared_dirs', ['storage']);
+set('shared_dirs', [
+    'storage',
+    'web/uploads',
+]);
+
 set('allow_anonymous_stats', false);
 
 // Hosts
