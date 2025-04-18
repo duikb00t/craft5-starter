@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import legacy from "@vitejs/plugin-legacy";
 import path from "path";
 import compression from "vite-plugin-compression";
-import vue from "@vitejs/plugin-vue";
+//import vue from "@vitejs/plugin-vue";
 import copy from 'rollup-plugin-copy'
 
 
@@ -29,12 +29,12 @@ export default defineConfig(({ command, mode }) => {
             }),
             legacy({
                 targets: ["defaults", "not IE 11"],
-            }),
-            vue({
-                template: {
-                    compilerOptions: {},
-                },
             })
+            // vue({
+            //     template: {
+            //         compilerOptions: {},
+            //     },
+            // })
             /*copy({
                 targets: [
                     { src: 'assets/images', dest: 'web/'}
@@ -44,8 +44,8 @@ export default defineConfig(({ command, mode }) => {
         resolve: {
             alias: {
                 "@js": path.resolve("assets/js"),
-                "@css": path.resolve("assets/css"),
-                vue: "vue/dist/vue.esm-bundler.js",
+                "@css": path.resolve("assets/css")
+                //vue: "vue/dist/vue.esm-bundler.js",
             },
             preserveSymlinks: true,
         },

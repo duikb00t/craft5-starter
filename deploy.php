@@ -39,6 +39,7 @@ desc('Install and build frontend assets');
 task('deploy:assets', function () {
     run('cd {{release_path}} && npm install --legacy-peer-deps');
     run('cd {{release_path}} && npm run build');
+    run('cd {{release_path}} && rm -rf node_modules');
 });
 
 desc('Craft CMS: apply all pending migrations');

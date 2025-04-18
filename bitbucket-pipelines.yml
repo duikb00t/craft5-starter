@@ -9,24 +9,28 @@ pipelines:
             - composer
             - node
           script:
-            # Install Composer dependencies
-            - curl -sS https://getcomposer.org/installer | php
-            - php composer.phar install --no-dev --optimize-autoloader
+            # Install tools
+            - apt-get update && apt-get install -y unzip git rsync nodejs npm openssh-client
 
-            # Install Node.js and build frontend
-            # - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-            - apt-get install -y nodejs
+            # Install Composer
+            - curl -sS https://getcomposer.org/installer | php
+            - mv composer.phar /usr/local/bin/composer
+
+            # Install PHP dependencies
+            - composer install --no-dev --optimize-autoloader
+
+            # Install Node dependencies & build assets
             - npm install
             - npm run build
 
-            # Set up SSH access to Combell
+            # SSH Config for Combell
             - mkdir -p ~/.ssh
             - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             - chmod 600 ~/.ssh/id_rsa
-            - ssh-keyscan staging.imprenta.be >> ~/.ssh/known_hosts
+            - ssh-keyscan ssh101.webhosting.be >> ~/.ssh/known_hosts
 
-            # Deploy backend using Deployer
-            - php vendor/bin/dep deploy production
+            # Deploy backend using Deployer (make sure Deployer is installed via composer)
+            - php vendor/bin/dep deploy staging
 
-            # Deploy frontend assets to the correct Combell path
-            - rsync -avz ./dist/ user@staging.imprenta.be:/data/sites/web/imprenta/subsites/staging.imprenta.be/
+            # Deploy frontend assets manually (if they aren't part of deploy path)
+            - rsync -avz ./dist/ imprentabe@ssh101.webhosting.be:/data/sites/web/imprenta/subsites/staging.imprenta.be/dist/
