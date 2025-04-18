@@ -1,0 +1,37 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+    <div class="max-w-3xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Zoekresultaten</h1>
+
+        {% set searchQuery = craft.app.request.getParam('q') %}
+        {% set entries = craft.entries()
+            .search(searchQuery)
+            .orderBy('score')
+            .all() %}
+
+        {% if entries|length %}
+            <p class="text-gray-700 mb-4">{{ entries|length }} {{ entries|length == 1 ? 'resultaat' : 'resultaten' }} gevonden voor:
+                <span class="font-semibold text-gray-900">“{{ searchQuery }}”</span>
+            </p>
+
+            <ul class="space-y-4">
+                {% for entry in entries %}
+                    <li class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white">
+                        <a href="{{ entry.url }}" class="text-xl text-yellow-600 font-semibold hover:underline">
+                            {{ entry.title }}
+                        </a>
+                        {% if entry.summary is defined %}
+                            <p class="text-sm text-gray-600 mt-1">{{ entry.summary }}</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            <div class="bg-yellow-50 border border-yellow-200 text-yellow-800 p-4 rounded-md">
+                <p>Geen resultaten gevonden voor: <strong>“{{ searchQuery }}”</strong>.</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

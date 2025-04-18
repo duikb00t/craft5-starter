@@ -4,20 +4,71 @@
 {% set posts = craft.entries.section('blog').limit(10).all() %}
 
 {% block content %}
-    <div class="container mx-auto">
-        <h1>{{ title }}</h1>
+    <div class="container mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">{{ title }}</h1>
 
         {% if posts is not empty %}
-            <ul>
+            <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3" role="list" aria-label="Lijst met blogartikelen">
                 {% for post in posts %}
-                    <li>
-                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                        <p>{{ post.excerpt }}</p>
-                    </li>
+                    <article
+                            class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group focus-within:ring-2 focus-within:ring-yellow-400"
+                            role="listitem"
+                    >
+                        <a href="{{ post.url }}" class="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500" aria-label="Lees blogartikel '{{ post.title }}'">
+
+                            {# Afbeelding bovenaan #}
+                            {% set image = post.thumbnail.one() %}
+                            {% if image %}
+                                <img
+                                        src="{{ image.url }}"
+                                        alt="{{ image.title ?? 'Afbeelding bij ' ~ post.title }}"
+                                        class="w-full h-48 object-cover"
+                                >
+                            {% else %}
+                                <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-500 text-sm" aria-hidden="true">
+                                    Geen afbeelding beschikbaar
+                                </div>
+                            {% endif %}
+
+                            <div class="p-6 flex flex-col h-full">
+
+                                {# Datum met machine-readable time #}
+                                <time
+                                        datetime="{{ post.postDate|date('Y-m-d') }}"
+                                        class="text-sm text-gray-600 mb-1 block"
+                                        aria-label="Gepubliceerd op {{ post.postDate|date('d F Y', 'nl') }}"
+                                >
+                                    {{ post.postDate|date('d F Y', 'nl') }}
+                                </time>
+
+                                <h2 class="text-lg font-semibold text-yellow-700 group-hover:underline mb-2">
+                                    {{ post.title }}
+                                </h2>
+
+                                {% if post.excerpt %}
+                                    <p class="text-sm text-gray-700 mb-4">
+                                        {{ post.excerpt|striptags|truncate(120) }}
+                                    </p>
+                                {% endif %}
+
+                                {# Lees meer als visuele knop #}
+                                <div class="mt-auto">
+                  <span
+                          class="inline-block px-4 py-2 text-sm bg-yellow-500 text-white font-medium rounded hover:bg-yellow-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-600"
+                          role="button"
+                          tabindex="0"
+                  >
+                    Lees meer
+                  </span>
+                                </div>
+
+                            </div>
+                        </a>
+                    </article>
                 {% endfor %}
-            </ul>
+            </div>
         {% else %}
-            <p>No blog posts available at the moment. Please check back later.</p>
+            <p class="text-gray-700" role="status">Er zijn momenteel geen blogberichten beschikbaar. Kom later terug.</p>
         {% endif %}
     </div>
 {% endblock %}

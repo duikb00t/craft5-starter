@@ -3,130 +3,121 @@
     .level(1)
     .all() %}
 
+<!-- Topbar -->
 <div id="topnav" class="bg-blue-600 text-white">
-    <div class="container mx-auto flex justify-between p-2">
-        <ul class="ml-auto flex space-x-4">
+    <div class="container mx-auto flex justify-end p-2 text-sm">
+        <ul class="flex space-x-4">
             <li><a href="#">Offerte aanvragen</a></li>
             <li><a href="#">Aanleverspecificaties</a></li>
         </ul>
     </div>
 </div>
 
-<nav class="p-6">
-    <div class="container mx-auto flex justify-between ">
-        <h1 class="text-3xl font-bold flex ">
+<!-- Sticky Main Nav -->
+<nav class="sticky top-0 z-50 bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap md:flex-nowrap gap-4">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
             {% set logo = craft.app.globals.getSetByHandle('header').headerSitelogo.one() %}
             {% if logo %}
                 <a href="{{ craft.app.sites.primarySite.baseUrl }}">
-                    <img src="{{ logo.url }}" alt="{{ craft.app.sites.currentSite.name }}" class="h-10 w-auto mr-2">
+                    <img src="{{ logo.url }}" alt="{{ craft.app.sites.currentSite.name }}" class="h-10 w-auto">
                 </a>
             {% else %}
-                <a href="{{ siteUrl }}" class="hover:underline">{{ craft.app.sites.currentSite.name }}</a>
+                <a href="{{ siteUrl }}" class="text-2xl font-bold">{{ craft.app.sites.currentSite.name }}</a>
             {% endif %}
-        </h1>
+        </div>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6" id="main-menu">
+        <!-- Search (desktop) -->
+        <form action="{{ url('search/results') }}" class="hidden md:flex relative w-full max-w-md">
+            <input
+                    type="search"
+                    name="q"
+                    aria-label="Zoek"
+                    placeholder="Zoek..."
+                    class="w-full py-2 pl-4 pr-10 text-sm text-gray-700 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+            />
+            <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 text-gray-500 hover:text-gray-700">
+                🔍
+            </button>
+        </form>
+
+        <!-- Menu Button (mobile) -->
+        <button class="md:hidden text-2xl text-black" id="menu-button">
+            ☰
+        </button>
+
+        <!-- Main Menu (desktop) -->
+        <div class="hidden md:flex items-center space-x-6" id="main-menu">
             {% for item in menuItems %}
                 {% set itemUrl = item.navLink.url %}
                 {% set itemLabel = item.navlabel ?? item.title %}
                 {% set children = item.children.all() %}
-
                 {% set currentUrl = craft.app.request.pathInfo %}
                 {% set itemPath = itemUrl|replace(craft.app.sites.primarySite.baseUrl, '') %}
-                {% set isBlog = currentUrl starts with 'blog' and itemPath == 'blog' %}
-                {% set isActive = currentUrl == itemPath or isBlog %}
+                {% set isActive = currentUrl == itemPath %}
 
                 {% if children %}
                     <div class="relative group">
-                        <a href="{{ itemUrl }}" class="text-black hover:text-gray-300 flex items-center space-x-1">
-                            <span>{{ itemLabel }}</span>
-                        </a>
-                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-
-                                {% for child in children %}
-                                    {% set childUrl = child.navLink.url ?? '#' %}
-                                    {% set childLabel = child.navlabel ?? child.title %}
-                                    <a href="{{ childUrl }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">{{ childLabel }}</a>
-                                {% endfor %}
+                        <a href="{{ itemUrl }}" class="text-black hover:text-yellow-500">{{ itemLabel }}</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50">
+                            {% for child in children %}
+                                <a href="{{ child.navLink.url ?? '#' }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                                    {{ child.navlabel ?? child.title }}
+                                </a>
+                            {% endfor %}
                         </div>
                     </div>
                 {% else %}
-                    <a href="{{ itemUrl }}" class="text-black hover:text-gray-300 {% if isActive %}font-bold{% endif %}">
+                    <a href="{{ itemUrl }}" class="text-black hover:text-yellow-500 {% if isActive %}font-bold{% endif %}">
                         {{ itemLabel }}
                     </a>
                 {% endif %}
             {% endfor %}
 
-            <a href="tel:+3233608433">+32 (0)3 360 84 33</a>
-            <a href="{{ siteUrl }}contact">Contact</a>
+            <a href="tel:+3233608433" class="text-black hover:text-yellow-500">+32 (0)3 360 84 33</a>
+            <a href="{{ siteUrl }}contact" class="text-black hover:text-yellow-500">Contact</a>
         </div>
-
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-black" id="menu-button">
-            &#9776;
-        </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden flex flex-col space-y-2 mt-2" id="mobile-menu">
-        {% for item in menuItems %}
-            {% set itemEntry = item.navLink.element %}
-            {% set itemUrl = itemEntry.url %}
-            {% set itemLabel = item.navlabel ?? item.title %}
-            {% set itemEntry = craft.entries().id(item.id).one() %}
-            {% set children = item.children.all() %}
+    <!-- Mobile Search + Menu -->
+    <div class="md:hidden px-4 pb-4 hidden" id="mobile-wrapper">
+        <!-- Mobile Search -->
+        <form action="{{ url('search/results') }}" class="relative w-full mb-4">
+            <input
+                    type="search"
+                    name="q"
+                    aria-label="Zoek"
+                    placeholder="Zoek..."
+                    class="w-full py-2 pl-4 pr-10 text-sm text-gray-700 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+            />
+            <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 text-gray-500 hover:text-gray-700">
+                🔍
+            </button>
+        </form>
 
-            {% if children %}
-                <div class="relative">
-                    <div class="flex justify-between items-center w-full px-4 py-2 text-white hover:bg-gray-700">
-                        <a href="{{ itemUrl }}" class="flex-1">{{ itemLabel }}</a>
-                        <button class="mobile-dropdown-toggle text-white">▼</button>
-                    </div>
-                    <div class="hidden flex flex-col bg-gray-700 rounded-lg mt-1 mobile-dropdown">
-                        {% for child in children %}
-                            {% set childUrl = child.url %}
-                            {% set childLabel = child.navlabel ?? child.title %}
-                            <a href="{{ childUrl }}" class="block px-4 py-2 text-white hover:bg-gray-600">{{ childLabel }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% else %}
-                <a href="{{ itemUrl }}" class="block px-4 py-2 text-white hover:bg-gray-700">{{ itemLabel }}</a>
-            {% endif %}
-        {% endfor %}
+        <!-- Mobile Menu Items -->
+        <div class="flex flex-col space-y-2" id="mobile-menu">
+            {% for item in menuItems %}
+                {% set itemUrl = item.navLink.url %}
+                {% set itemLabel = item.navlabel ?? item.title %}
+                <a href="{{ itemUrl }}" class="block px-2 py-2 text-black hover:bg-gray-100 rounded">{{ itemLabel }}</a>
+            {% endfor %}
+            <a href="tel:+3233608433" class="text-black hover:bg-gray-100 px-2 py-2 rounded">+32 (0)3 360 84 33</a>
+            <a href="{{ siteUrl }}contact" class="text-black hover:bg-gray-100 px-2 py-2 rounded">Contact</a>
+        </div>
     </div>
 </nav>
 
-<!-- JavaScript for Mobile Menu -->
+<!-- JS for Mobile Toggle -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const menuButton = document.getElementById("menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const dropdownToggles = document.querySelectorAll(".mobile-dropdown-toggle");
+        const button = document.getElementById("menu-button");
+        const mobileWrapper = document.getElementById("mobile-wrapper");
 
-        // Toggle main mobile menu
-        menuButton.addEventListener("click", function () {
-            mobileMenu.classList.toggle("hidden");
-        });
-
-        // Handle dropdown toggles
-        dropdownToggles.forEach(button => {
-            button.addEventListener("click", function () {
-                const dropdown = this.parentElement.nextElementSibling;
-
-                // Close any open submenus except the one being clicked
-                document.querySelectorAll(".mobile-dropdown").forEach(submenu => {
-                    if (submenu !== dropdown) {
-                        submenu.classList.add("hidden");
-                        submenu.previousElementSibling.classList.remove("active");
-                    }
-                });
-
-                // Toggle the clicked submenu
-                dropdown.classList.toggle("hidden");
-                this.classList.toggle("active");
-            });
+        button.addEventListener("click", () => {
+            mobileWrapper.classList.toggle("hidden");
         });
     });
 </script>

@@ -3,21 +3,26 @@ namespace Deployer;
 
 require 'recipe/common.php';
 
+// SSH Config
+set('http_user', 'imprentabe');
+set('ssh-type', 'native');
+set('ssh_multiplexing', true);
+
 // Config
 set('application', 'craftcms5');
 set('repository', 'git@github.com:duikb00t/craft5-starter.git');
 set('git_tty', true);
-set('keep_releases', 5);
+set('keep_releases', 4);
 set('shared_files', ['.env']);
 set('shared_dirs', ['storage']);
-set('writable_dirs', ['storage', 'web/cpresources']);
+//set('writable_dirs', ['storage', 'web/cpresources']);
 set('allow_anonymous_stats', false);
 
 // Hosts
-host('production')
-    ->setHostname('yourserver.com')
-    ->set('remote_user', 'deployuser')
-    ->set('deploy_path', '/var/www/craftcms5');
+host('staging')
+    ->setHostname('ssh101.webhosting.be')
+    ->set('remote_user', 'imprentabe')
+    ->set('deploy_path', ' ~/subsites/staging.imprenta.be');
 
 // Tasks
 desc('Install dependencies');
