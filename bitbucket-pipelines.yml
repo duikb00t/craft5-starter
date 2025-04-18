@@ -1,36 +1,32 @@
-image: php:8.2
+image: edbizarro/gitlab-ci-pipeline-php:8.2
 
 pipelines:
   branches:
     main:
       - step:
-          name: Deploy to Combell (Craft CMS + VITE)
+          name: Build & Deploy to Combell
           caches:
             - composer
             - node
           script:
-            # Install tools
-            - apt-get update && apt-get install -y unzip git rsync nodejs npm openssh-client
+            # Print PHP extensions
+            - php -m
 
-            # Install Composer
-            - curl -sS https://getcomposer.org/installer | php
-            - mv composer.phar /usr/local/bin/composer
-
-            # Install PHP dependencies
+            # Install Composer dependencies
             - composer install --no-dev --optimize-autoloader
 
-            # Install Node dependencies & build assets
+            # Build frontend assets
             - npm install
             - npm run build
 
-            # SSH Config for Combell
+            # SSH config
             - mkdir -p ~/.ssh
             - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             - chmod 600 ~/.ssh/id_rsa
             - ssh-keyscan ssh101.webhosting.be >> ~/.ssh/known_hosts
 
-            # Deploy backend using Deployer (make sure Deployer is installed via composer)
+            # Deploy backend (PHP/DB) via Deployer
             - php vendor/bin/dep deploy staging
 
-            # Deploy frontend assets manually (if they aren't part of deploy path)
-            - rsync -avz ./dist/ imprentabe@ssh101.webhosting.be:/data/sites/web/imprenta/subsites/staging.imprenta.be/dist/
+            # Upload frontend (dist) assets
+            - rsync -avz ./web/dist/ imprentabe@ssh101.webhosting.be:/data/sites/web/imprenta/subsites/staging.imprenta.be/web/dist/
