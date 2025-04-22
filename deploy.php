@@ -30,7 +30,7 @@ host('staging')
     ->set('deploy_path', '~/subsites/staging.imprenta.be');
 
 // Tasks
-desc('Install PHP dependencies');
+desc('Insdeall PHP dependencies');
 task('deploy:vendors', function () {
     run('cd {{release_path}} && composer install --no-dev --quiet --prefer-dist --optimize-autoloader');
 });
