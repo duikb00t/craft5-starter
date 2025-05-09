@@ -1,4 +1,4 @@
-dateModified: 1744233628
+dateModified: 1746650034
 elementSources:
   craft\elements\Entry:
     -
@@ -129,6 +129,7 @@ meta:
     f3db99ba-0b03-4ef1-a005-54c17e98b856: Vacancies # Vacancies
     f34aad52-4756-44e0-b970-78813ee16a13: Slider # Slider
     f410ed53-0228-4006-8eef-203478024c3c: Services # Services
+    ff00e668-0f4d-4b97-a04a-37b45ed0bede: imagePosition # imagePosition
 plugins:
   ckeditor:
     edition: standard
@@ -464,6 +465,21 @@ plugins:
       updateSearchIndexes: '1'
       useQueueForEmailNotifications: false
       useQueueForIntegrations: false
+  search-assistant:
+    edition: lite
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      enabled: true
+      ignoreCpUsers: true
+      ipIgnore:
+        -
+          - '::1'
+          - 'IPv6 localhost'
+        -
+          - 127.0.0.1
+          - 'IPv4 localhost'
+      pluginName: 'Search Assistant'
   sprout-redirects:
     edition: lite
     enabled: true
@@ -485,7 +501,7 @@ system:
   live: true
   name: 'Imprenta - Print Professionals'
   retryDuration: null
-  schemaVersion: 5.6.0.2
+  schemaVersion: 5.7.0.3
   timeZone: Europe/Brussels
 users:
   allowPublicRegistration: false

@@ -1,0 +1,45 @@
+columnSuffix: null
+handle: imageposition
+instructions: 'Geef aan of de afbeelding links of rechts van het content block komt te staan.'
+name: imagePosition
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Links
+        -
+          - value
+          - left
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Rechts
+        -
+          - value
+          - right
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

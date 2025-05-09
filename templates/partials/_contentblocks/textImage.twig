@@ -21,13 +21,15 @@ Props:
                         {{ block.body }}
                     </div>
 
-                    {% if block.cta.url is not empty %}
-                        <a href="{{ block.cta.url }}" class="inline-block bg-black text-white font-semibold py-2 px-6 rounded shadow hover:bg-gray-800 transition">
-                            {{ block.cta.text }}
+                    {% if block.ctaButton is not empty %}
+
+                        <a href="{{ block.ctaButton }}" class="inline-block bg-black text-white font-semibold py-2 px-6 rounded shadow hover:bg-gray-800 transition">
+                            {{ block.ctaButton }}
                         </a>
                     {% endif %}
                 </div>
             </div>
+
 
             <!-- Image / Gallery Block -->
             <div class="w-full xl:w-1/2">
@@ -61,9 +63,4 @@ Props:
         </div>
     </div>
 
-    {% if block.cta.url is not empty %}
-        <a href="{{ block.cta.url }}" class="fixed bottom-4 right-4 z-50 bg-black text-white font-bold py-2 px-5 rounded shadow-lg hover:bg-gray-800 transition hidden lg:inline-block">
-            {{ block.cta.text }}
-        </a>
-    {% endif %}
 </div>

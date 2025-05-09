@@ -9,6 +9,8 @@
 
 
 {% block content %}
+
+
        <h1 class="heading">{{ entry.title }}</h1>
 
        {% if entry.children | length  %}
@@ -30,6 +32,13 @@
                      {% endfor %}
               </ul>
        {% else %}
-              Show template - NO NO grid
+              <h2>Show template - NO NO grid</h2>
+              <h2>Show template - NO NO grid</h2>
+              <h2>Show template - NO NO grid</h2>
+
+           {% if entry.contentblocks is defined and entry.contentblocks|length %}
+               {% include "partials/_contentblocks.twig" with { block: entry.contentblocks.all() } %}
+           {% endif %}
+
        {% endif %}
 {% endblock %}

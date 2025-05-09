@@ -3,19 +3,37 @@
     .level(1)
     .all() %}
 
-<!-- Topbar -->
-<div id="topnav" class="bg-blue-600 text-white">
-    <div class="container mx-auto flex justify-end p-2 text-sm">
-        <ul class="flex space-x-4">
-            <li><a href="#">Offerte aanvragen</a></li>
-            <li><a href="#">Aanleverspecificaties</a></li>
-        </ul>
+<!-- Top promotional banner -->
+<section id="topnav" class="bg-yellow-100 text-sm text-black py-2 bg-blue-600">
+    <div class="container mx-auto px-4">
+        <!-- Carousel div gets the ID for JS -->
+        <div id="carousel" class="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory sm:overflow-visible">
+            <ul class="flex sm:grid sm:grid-cols-4 gap-4 min-w-full sm:min-w-0">
+                <li class="shrink-0 snap-start min-w-[75%] sm:min-w-0 flex items-center gap-2 justify-center text-black">
+                    <span class="text-xs" aria-hidden="true">✔</span>
+                    <span><strong>Expert in print & sign</strong> sinds 1982</span>
+                </li>
+                <li class="shrink-0 snap-start min-w-[75%] sm:min-w-0 flex items-center gap-2 justify-center text-black">
+                    <span class="text-xs" aria-hidden="true">✔</span>
+                    <span><strong>Alles in huis:</strong> ontwerp, productie én plaatsing</span>
+                </li>
+                <li class="shrink-0 snap-start min-w-[75%] sm:min-w-0 flex items-center gap-2 justify-center text-black">
+                    <span class="text-xs" aria-hidden="true">✔</span>
+                    <span><strong>Snelle levering</strong> & topkwaliteit</span>
+                </li>
+                <li class="shrink-0 snap-start min-w-[75%] sm:min-w-0 flex items-center gap-2 justify-center text-black">
+                    <span class="text-xs" aria-hidden="true">✔</span>
+                    <span><strong>Advies met een glimlach</strong></span>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+</section>
 
 <!-- Sticky Main Nav -->
 <nav class="sticky top-0 z-50 bg-white shadow">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap md:flex-nowrap gap-4">
+
 
         <!-- Logo -->
         <div class="flex items-center space-x-2">
@@ -43,6 +61,13 @@
             </button>
         </form>
 
+        <a href="{{ siteUrl }}contact" class="text-black hover:text-yellow-500">Contact</a>
+
+
+    </div>
+
+    <div style="background-color:#EAD801 ">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap md:flex-nowrap gap-4">
         <!-- Menu Button (mobile) -->
         <button class="md:hidden text-2xl text-black" id="menu-button">
             ☰
@@ -75,11 +100,9 @@
                     </a>
                 {% endif %}
             {% endfor %}
-
-            <a href="tel:+3233608433" class="text-black hover:text-yellow-500">+32 (0)3 360 84 33</a>
-            <a href="{{ siteUrl }}contact" class="text-black hover:text-yellow-500">Contact</a>
         </div>
     </div>
+</div>
 
     <!-- Mobile Search + Menu -->
     <div class="md:hidden px-4 pb-4 hidden" id="mobile-wrapper">
@@ -110,14 +133,37 @@
     </div>
 </nav>
 
-<!-- JS for Mobile Toggle -->
 <script>
+    // Mobile menu
     document.addEventListener("DOMContentLoaded", function () {
         const button = document.getElementById("menu-button");
         const mobileWrapper = document.getElementById("mobile-wrapper");
 
         button.addEventListener("click", () => {
             mobileWrapper.classList.toggle("hidden");
+        });
+    });
+
+    // Carousel top
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('carousel');
+        if (!container) return; // Exit if the carousel element doesn't exist
+
+        const scrollAmount = container.offsetWidth;
+        let interval = setInterval(scrollNext, 4000);
+
+        function scrollNext() {
+            if (container.scrollLeft + scrollAmount >= container.scrollWidth) {
+                container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        container.addEventListener('mouseenter', () => clearInterval(interval));
+        container.addEventListener('mouseleave', () => {
+            interval = setInterval(scrollNext, 4000);
         });
     });
 </script>

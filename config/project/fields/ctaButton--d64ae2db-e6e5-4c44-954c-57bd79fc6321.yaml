@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: ctaButton
-instructions: null
+instructions: 'Waar moet deze knop naar verwijzen?'
 name: 'CTA Button'
 searchable: false
 settings:
@@ -16,6 +16,12 @@ settings:
             -
               - sources
               - '*'
+            -
+              - showUnpermittedSections
+              - '1'
+            -
+              - showUnpermittedEntries
+              - '1'
       -
         - url
         -
@@ -25,6 +31,9 @@ settings:
               - ''
             -
               - allowAnchors
+              - ''
+            -
+              - allowCustomSchemes
               - ''
   types:
     - entry

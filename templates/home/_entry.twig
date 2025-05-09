@@ -1,12 +1,12 @@
 {% extends "_layout" %}
-{% set title = "Home" %}
+{% set title = entry.type.name %}
+
+
+
 
 {% block content %}
-    {{  include('partials/components/_headerSlider') }}
 
-    <div class="container mx-auto">
-    {{  include('partials/components/_serviceBlocks') }}
-    </div>
+    {{  include('partials/components/_headerSlider') }}
 
     <div class="container mx-auto">
         <div class="projects">

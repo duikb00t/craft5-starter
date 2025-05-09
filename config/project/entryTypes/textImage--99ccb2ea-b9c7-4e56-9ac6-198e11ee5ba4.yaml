@@ -37,22 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-08T21:06:02+00:00'
-            elementCondition: null
-            fieldUid: 66075bdc-827d-4275-a8c1-9c350786e7cc # Heading
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: de8c1bbc-5b7a-458f-9dde-857f8ba04f69
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-01-08T21:06:02+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: df402d3e-ddfa-4994-a215-f5ad8cce0e7d # Body
             handle: null
@@ -69,6 +54,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-08T21:13:35+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 9ddd51fe-ec67-4684-b83e-c334ee920f66 # Content Block Image
             handle: null
@@ -85,9 +71,27 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-03-16T22:03:23+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d64ae2db-e6e5-4c44-954c-57bd79fc6321 # CTA Button
-            handle: null
+            handle: ctaButton
+            includeInCards: false
+            instructions: 'Call to action link'
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4e20724c-1bb5-42f0-a40c-a1dd02f447c6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-07T19:54:50+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ff00e668-0f4d-4b97-a04a-37b45ed0bede # imagePosition
+            handle: imagePosition
             includeInCards: false
             instructions: null
             label: null
@@ -95,7 +99,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 4e20724c-1bb5-42f0-a40c-a1dd02f447c6
+            uid: 708ee592-9e93-43e2-bff0-e7660f71fe8c
             userCondition: null
             warning: null
             width: 100
