@@ -24,4 +24,6 @@ return GeneralConfig::create()
     ->aliases([
         '@webroot' => dirname(__DIR__) . '/web',
     ])
+    ->resourceBasePath(dirname(__DIR__) . '/web/cpresources')
+    ->resourceBaseUrl('/cpresources');
 ;
