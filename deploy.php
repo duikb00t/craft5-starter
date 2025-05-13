@@ -64,6 +64,11 @@ task('craft:clear-caches', function () {
     run('cd {{release_path}} && php craft cache/flush-all');
 });
 
+desc('Reload PHP after deploy');
+task('reload:php', function () {
+    run('reloadPHP.sh');
+});
+
 // Hooks
 after('deploy:shared', 'deploy:vendors');
 after('deploy:vendors', 'craft:post-install');
@@ -73,3 +78,4 @@ after('craft:migrate', 'craft:project-config-sync');
 after('craft:project-config-sync', 'craft:clear-caches');
 after('deploy:failed', 'deploy:unlock');
 after('deploy:symlink', 'craft:clear-caches');
+after('craft:clear-caches', 'reload:php');
