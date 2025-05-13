@@ -19,6 +19,7 @@ set('shared_files', ['.env']);
 set('shared_dirs', [
     'storage',
     'web/uploads',
+    'web/cpresources'
 ]);
 
 set('allow_anonymous_stats', false);
