@@ -4,32 +4,23 @@ instructions: null
 name: 'Content Block Image'
 searchable: false
 settings:
-  allowSelfRelations: false
-  allowSubfolders: false
-  allowUploads: true
-  allowedKinds:
-    - image
-  branchLimit: null
-  defaultUploadLocationSource: 'volume:2fe9e929-df80-4425-b35b-5b4330c945b3' # Uploads
-  defaultUploadLocationSubpath: null
-  maintainHierarchy: false
-  maxRelations: null
-  minRelations: null
-  previewMode: full
-  restrictFiles: true
-  restrictLocation: true
-  restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: 'volume:2fe9e929-df80-4425-b35b-5b4330c945b3' # Uploads
-  restrictedLocationSubpath: null
-  selectionLabel: 'Voeg een afbeelding toe'
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - f1dc9257-7fa3-497b-8d12-3fbf8bf44599 # Image
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
   showCardsInGrid: false
-  showSiteMenu: true
-  showUnpermittedFiles: false
-  showUnpermittedVolumes: false
-  sources: '*'
-  targetSiteId: null
-  validateRelatedElements: false
-  viewMode: large
+  viewMode: blocks
 translationKeyFormat: null
-translationMethod: none
-type: craft\fields\Assets
+translationMethod: site
+type: craft\fields\Matrix

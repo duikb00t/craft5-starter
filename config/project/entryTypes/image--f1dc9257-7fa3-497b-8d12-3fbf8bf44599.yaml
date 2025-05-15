@@ -1,0 +1,55 @@
+color: null
+fieldLayouts:
+  ffe5a88a-2c8b-459c-889a-a6f0159319c2:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-05-15T18:47:46+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 36adcd5f-5f7a-444d-aaa3-093f717e494d # image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6961ff94-b952-40c7-9745-bf161bd0d5e4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-15T18:47:46+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bb74f3dc-64ed-4db4-8980-6f0cff89d93c # Image Alt (SEO)
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5561ca98-a598-457a-925a-71f6fc31ddc6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3e0760bf-5992-48ef-b5e8-d028a331f8f9
+        userCondition: null
+handle: image
+hasTitleField: false
+icon: image-landscape
+name: Image
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

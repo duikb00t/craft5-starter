@@ -8,7 +8,7 @@
     "jrrdnx/craft-search-assistant": "^1.1.4",
     "nystudio107/craft-twigpack": "^5.0.0",
     "nystudio107/craft-vite": "^5.0.1",
-    "solspace/craft-freeform": "5.10.13",
+    "solspace/craft-freeform": "5.10.14",
     "verbb/field-manager": "^4.0.3",
     "verbb/super-table": "4.0.4",
     "vlucas/phpdotenv": "^5.4.0"

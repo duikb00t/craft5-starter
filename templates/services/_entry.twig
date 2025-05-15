@@ -11,30 +11,34 @@
 {% block content %}
 
 
-       <h1 class="heading">{{ entry.title }}</h1>
-
        {% if entry.children | length  %}
-           Show template with GRID
-              <ul>
-                     {% for child in entry.children %}
-                            <li>
-                               {% set image = child.featuredImage.one() %}
+        <div class="container mx-auto">
 
-                                <a href="{{ child.getUrl() }}">
-                                    {% if image %}
-                                        <img src="{{ image.url }}" alt="{{ entry.title }}" width="250">
-                                    {% else %}
-                                        <img src="#PLACEHOLDER#" alt="{{ entry.title }}">
-                                    {% endif %}
-                                   {{ child.title }}
-                                </a>
-                            </li>
-                     {% endfor %}
-              </ul>
+            <h2 class="text-4xl font-extrabold">
+                {{ entry.title }}
+            </h2>
+
+               <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                   {% for child in entry.children %}
+                       {% set image = child.featuredImage.one() %}
+                       <a href="{{ child.getUrl() }}" class="block bg-white rounded shadow hover:shadow-lg transition overflow-hidden text-center">
+                           {% if image %}
+                               <img src="{{ image.url }}" alt="{{ child.title }}" class="w-full aspect-square object-cover">
+                           {% else %}
+                               <div class="w-full aspect-square bg-gray-100 flex items-center justify-center text-gray-400">
+                                   <span class="text-sm">No image</span>
+                               </div>
+                           {% endif %}
+                           <div class="p-3 font-semibold text-black">
+                               {{ child.title }}
+                           </div>
+                       </a>
+                   {% endfor %}
+               </div>
+        </div>
+
        {% else %}
-              <h2>Show template - NO NO grid</h2>
-              <h2>Show template - NO NO grid</h2>
-              <h2>Show template - NO NO grid</h2>
+           <!-- Render template, not the grid -->
 
            {% if entry.contentblocks is defined and entry.contentblocks|length %}
                {% include "partials/_contentblocks.twig" with { block: entry.contentblocks.all() } %}

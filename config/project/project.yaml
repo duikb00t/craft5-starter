@@ -1,4 +1,4 @@
-dateModified: 1746650034
+dateModified: 1747335070
 elementSources:
   craft\elements\Entry:
     -
@@ -44,7 +44,7 @@ fs:
     hasUrls: false
     name: 'file uploads'
     settings:
-      path: '@webroot/uploads'
+      path: $CRAFT_WEB_ROOT/uploads
     type: craft\fs\Local
     url: null
   uploads:
@@ -58,9 +58,9 @@ fs:
     hasUrls: true
     name: web
     settings:
-      path: /var/www/html/web/uploads
+      path: $CRAFT_WEB_ROOT/uploads
     type: craft\fs\Local
-    url: 'https://imprenta.ddev.site/web/uploads'
+    url: $PRIMARY_SITE_URL/uploads
 meta:
   __names__:
     0fc41067-6d0d-4a7b-897b-772544f01fa9: 'Show in Menu' # Show in Menu
@@ -74,6 +74,7 @@ meta:
     6e35ac18-f4e7-4772-8dd6-080cdd0efea9: Link # Link
     9ddd51fe-ec67-4684-b83e-c334ee920f66: 'Content Block Image' # Content Block Image
     12ee1616-7b38-4caa-a85b-49d456e0c9fa: Pages # Pages
+    36adcd5f-5f7a-444d-aaa3-093f717e494d: image # image
     38a8e666-e3bc-45ce-ba85-0dda8e172c54: $DDEV_PROJECT # $DDEV_PROJECT
     62f8d3f2-1d4c-4ee3-85ea-739ac7cb45bb: 'Footer Telefoon' # Footer Telefoon
     87a7d348-af21-41c0-b27f-034a79381253: Heading # Heading
@@ -102,6 +103,7 @@ meta:
     b726e6a3-6ba3-439a-a560-11a5f7e0be4c: 'footer Instagram' # footer Instagram
     b2087cc6-a511-4ab7-8e7e-6c0505353e9a: Footer # Footer
     ba1abcd0-a6f3-4e9d-9c02-1363c4a5b4a0: 'Project Slide' # Project Slide
+    bb74f3dc-64ed-4db4-8980-6f0cff89d93c: 'Image Alt (SEO)' # Image Alt (SEO)
     bc9d6031-b5f7-4593-8c92-49823651a56c: 'Hero Slider - Banner' # Hero Slider - Banner
     bc67b45c-5db1-4bda-898d-ef8fd6e7b08e: Sublinks # Sublinks
     bd965774-d989-4ad8-9b4e-2b31bc5ca453: 'Dropdown Block' # Dropdown Block
@@ -126,7 +128,9 @@ meta:
     e359e1e8-8a0e-4f38-addb-ac8d7fe7c095: 'footer Facebook' # footer Facebook
     e2770224-47ca-4398-ab99-efb0b611a39e: 'Header text' # Header text
     ea43f952-97d6-455a-b99e-80cfbda38ea3: 'Footer elements' # Footer elements
+    f1dc9257-7fa3-497b-8d12-3fbf8bf44599: Image # Image
     f3db99ba-0b03-4ef1-a005-54c17e98b856: Vacancies # Vacancies
+    f8ad5f1a-d8a7-4bbb-89a4-7c294aaaa971: Position # Position
     f34aad52-4756-44e0-b970-78813ee16a13: Slider # Slider
     f410ed53-0228-4006-8eef-203478024c3c: Services # Services
     ff00e668-0f4d-4b97-a04a-37b45ed0bede: imagePosition # imagePosition

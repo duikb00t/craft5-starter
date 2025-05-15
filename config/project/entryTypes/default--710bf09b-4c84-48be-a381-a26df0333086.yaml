@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-04-09T21:13:43+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: f34aad52-4756-44e0-b970-78813ee16a13 # Slider
             handle: null
@@ -58,7 +59,25 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2025-05-14T21:25:38+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 94655389-9aaa-41cf-a493-c34178a44ec2 # Intro
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7154bbaa-ada0-4021-aa31-d2d4b591ced4
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-02-08T21:47:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 1a5c74d4-7b0e-4d0b-9d95-0f6831237fab # Content
             handle: null

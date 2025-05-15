@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: navDropdownLabel
-instructions: null
-name: 'Dropdown Label'
+handle: position
+instructions: 'Hoe moet het de content worden weergegeven, tekst links, tekst rechts, gecentreerd?'
+name: Position
 searchable: false
 settings:
   customOptions: false
@@ -10,53 +10,53 @@ settings:
       __assoc__:
         -
           - label
-          - 'Text Left'
-        -
-          - value
-          - left
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Text Right'
-        -
-          - value
-          - textRight
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - Centered
+          - Gecentreerd
         -
           - value
           - centered
         -
           - icon
-          - ''
+          - align-justify
         -
           - color
           - ''
         -
           - default
           - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Tekst links'
+        -
+          - value
+          - textLeft
+        -
+          - icon
+          - align-justify
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Tekst rechts'
+        -
+          - value
+          - texRight
+        -
+          - icon
+          - align-right
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Dropdown

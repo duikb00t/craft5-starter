@@ -1,21 +1,26 @@
-{% set slides = entry.heroSlider.all() %}
-{% if slides is not empty %}
-    <div class="glider-contain">
-        <div class="glider">
-            {% for slide in slides %}
-                <div class="glider-slide">
-                    {% set image = slide.sliderImage.one() %}
-                    {% if image %}
-                        <img src="{{ image.url }}" alt="{{ slide.sliderHeading|default('Slide image') }}" loading="lazy">
-                    {% endif %}
-                    {% if slide.sliderHeading %}
-                        <h2>{{ slide.sliderHeading }}</h2>
-                    {% endif %}
-                </div>
-            {% endfor %}
+{% if entry is defined and entry.heroSlider is not empty %}
+    {% set slides = entry.heroSlider.all() %}
+    {% if slides is not empty %}
+        <div class="glider-contain">
+            <div class="glider">
+                {% for slide in slides %}
+                    <div class="glider-slide">
+                        {% set image = slide.sliderImage.one() %}
+                        {% if image %}
+                            <img src="{{ image.url }}" alt="{{ slide.sliderHeading|default('Slide image') }}" loading="lazy">
+                        {% endif %}
+                        {% if slide.sliderHeading %}
+                            <h2>{{ slide.sliderHeading }}</h2>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            {#        <button class="glider-prev">«</button>#}
+            {#        <button class="glider-next">»</button>#}
+            <div class="glider-dots"></div>
         </div>
-{#        <button class="glider-prev">«</button>#}
-{#        <button class="glider-next">»</button>#}
-        <div class="glider-dots"></div>
-    </div>
+    {% endif %}
+{% else %}
+    {# You can optionally output a fallback message or leave this empty #}
+    {# <p>No slider content available.</p> #}
 {% endif %}

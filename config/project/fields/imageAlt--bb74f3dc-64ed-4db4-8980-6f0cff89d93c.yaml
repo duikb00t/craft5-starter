@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: imageAlt
+instructions: 'Write an alt for this image (SEO)'
+name: 'Image Alt (SEO)'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 100
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

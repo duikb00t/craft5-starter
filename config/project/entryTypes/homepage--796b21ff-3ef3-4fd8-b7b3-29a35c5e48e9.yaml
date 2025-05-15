@@ -14,6 +14,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2025-02-27T22:17:31+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: f34aad52-4756-44e0-b970-78813ee16a13 # Slider
             handle: null
@@ -30,6 +31,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-03-01T23:27:09+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 94655389-9aaa-41cf-a493-c34178a44ec2 # Intro
             handle: null
@@ -46,6 +48,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-03-16T21:52:38+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b0af7fa0-30d5-49ab-87d6-2f91da10bbc6 # Project Slider
             handle: null
@@ -62,6 +65,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-03-17T21:38:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 1a5c74d4-7b0e-4d0b-9d95-0f6831237fab # Content
             handle: null

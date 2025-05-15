@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-03-01T23:27:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: df402d3e-ddfa-4994-a215-f5ad8cce0e7d # Body
             handle: null
@@ -53,6 +54,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-03-01T23:27:06+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d64ae2db-e6e5-4c44-954c-57bd79fc6321 # CTA Button
             handle: null
@@ -67,7 +69,24 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
+          -
+            dateAdded: '2025-05-14T21:10:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f8ad5f1a-d8a7-4bbb-89a4-7c294aaaa971 # Position
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7cb99b39-fa47-4399-b1b8-36cbdd265899
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Intro input'
         uid: 361a2d81-6d66-41e0-9ec4-e0974d6990c9
         userCondition: null
 handle: intro

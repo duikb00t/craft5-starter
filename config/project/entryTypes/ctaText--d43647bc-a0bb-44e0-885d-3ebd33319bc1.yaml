@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-08T21:45:36+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 66075bdc-827d-4275-a8c1-9c350786e7cc # Heading
             handle: null
@@ -53,6 +54,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-08T21:45:36+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: df402d3e-ddfa-4994-a215-f5ad8cce0e7d # Body
             handle: null
@@ -69,6 +71,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-08T21:45:36+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d64ae2db-e6e5-4c44-954c-57bd79fc6321 # CTA Button
             handle: null
@@ -80,6 +83,23 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b3b5f5ac-bdf4-425f-963a-d14a65d2cf44
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-14T21:09:30+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f8ad5f1a-d8a7-4bbb-89a4-7c294aaaa971 # Position
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5d0459d-4294-4bc3-a140-3226cf3cf4ca
             userCondition: null
             warning: null
             width: 100
