@@ -1,7 +1,8 @@
 {% if entry is defined and entry.heroSlider is not empty %}
     {% set slides = entry.heroSlider.all() %}
-    {% if slides is not empty %}
-        <div class="glider-contain">
+    {% set slideCount = slides|length %}
+    {% if slideCount > 0 %}
+        <div class="glider-contain" style="height: 80vh;">
             <div class="glider">
                 {% for slide in slides %}
                     <div class="glider-slide">
@@ -15,12 +16,17 @@
                     </div>
                 {% endfor %}
             </div>
-            {#        <button class="glider-prev">«</button>#}
-            {#        <button class="glider-next">»</button>#}
-            <div class="glider-dots"></div>
+
+            {# Navigation and dots shown only if more than one slide #}
+            {% if slideCount > 1 %}
+                <div class="glider-dots"></div>
+                {# Uncomment these if you want nav arrows too #}
+                {# <button class="glider-prev">«</button>
+                <button class="glider-next">»</button> #}
+            {% endif %}
         </div>
     {% endif %}
 {% else %}
-    {# You can optionally output a fallback message or leave this empty #}
+    {# Optional fallback #}
     {# <p>No slider content available.</p> #}
 {% endif %}

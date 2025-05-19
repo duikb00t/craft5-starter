@@ -26,7 +26,7 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: services/_entry.twig
-    uriFormat: '{parent.uri ?? ''services''}/{slug}'
+    uriFormat: "{parent.uri ?? 'services'}/{slug}"
 structure:
   maxLevels: null
   uid: b94b4ba0-056c-4169-b7c1-092bd66617b7

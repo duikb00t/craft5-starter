@@ -43,3 +43,13 @@ footer {
 #main-menu .active {
     background: red;
 }
+
+.glider-contain {
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.glider-slide {
+    height: 100%;
+}

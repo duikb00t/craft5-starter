@@ -39,10 +39,35 @@
 
        {% else %}
            <!-- Render template, not the grid -->
-
            {% if entry.contentblocks is defined and entry.contentblocks|length %}
                {% include "partials/_contentblocks.twig" with { block: entry.contentblocks.all() } %}
            {% endif %}
+
+
+           <section class="w-full py-10">
+               <div class="container mx-auto px-4">
+                   <div class="bg-red-600 text-white rounded-xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+
+                       <!-- Linkerzijde: Logo -->
+                       <div class="flex-shrink-0">
+                           <!-- Gebruik je eigen logo of inline SVG -->
+                           <img src="/images/fotolab-logo-white.svg" alt="Fotolab by Imprenta" class="h-12 md:h-16 w-auto" />
+                       </div>
+
+                       <!-- Rechterzijde: Tekst met CTA -->
+                       <div class="text-center md:text-left max-w-2xl">
+                           <p class="text-lg font-medium leading-relaxed">
+                               Heb je specifieke wensen voor je fotoprints?
+                               <a href="https://fotolab.be" class="underline font-semibold hover:text-white/90 transition">
+                                   Bezoek Fotolab.be
+                               </a>
+                               en ontdek alle mogelijkheden!
+                           </p>
+                       </div>
+
+                   </div>
+               </div>
+           </section>
 
        {% endif %}
 {% endblock %}

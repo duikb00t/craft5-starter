@@ -6,6 +6,7 @@ searchable: true
 settings:
   createButtonLabel: null
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
     -
       __assoc__:
@@ -22,6 +23,16 @@ settings:
         -
           - uid
           - 3e7105b7-7ec1-4014-a358-4c0b19b4e7af # Sidebar
+    -
+      __assoc__:
+        -
+          - uid
+          - db65710f-c642-4673-8649-177516332d5b # Intro
+    -
+      __assoc__:
+        -
+          - uid
+          - 0471c830-3025-495b-82f9-86e3d3f2cba9 # Columns
   includeTableView: false
   maxEntries: null
   minEntries: null

@@ -1,0 +1,32 @@
+<section class="w-full bg-yellow-100 py-12">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">{{ block.title }}</h2>
+
+        {% if block.columns %}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {% for column in block.columns %}
+                    <article class="flex items-start space-x-4">
+                        <div>
+                            <h3 class="font-semibold text-lg text-black">Kwaliteit gegarandeerd</h3>
+                            <p class="text-gray-700 mt-1">
+                                {{ column.body }}
+                            </p>
+                        </div>
+                    </article>
+
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- USP Grid HTML template -->
+{#            <article class="flex items-start space-x-4">
+                <span class="text-yellow-500 text-2xl" aria-hidden="true">✔️</span>
+                <div>
+                    <h3 class="font-semibold text-lg text-black">Uitstekende klantenservice</h3>
+                    <p class="text-gray-700 mt-1">
+                        Onze klantendienst staat altijd voor je klaar. Van productadvies tot levering zorgen wij voor een zorgeloze ervaring.
+                    </p>
+                </div>
+            </article>#}
+    </div>
+</section>

@@ -1,4 +1,4 @@
-dateModified: 1747335070
+dateModified: 1747486064
 elementSources:
   craft\elements\Entry:
     -
@@ -82,6 +82,7 @@ meta:
     88ee5a92-a6cc-48ad-9d2e-277bf7f5bcb0: 'Link Block' # Link Block
     99ccb2ea-b9c7-4e56-9ac6-198e11ee5ba4: 'Text + image' # Text + image
     424c04c2-e1f1-4d98-a817-5a64a55db526: Header # Header
+    0471c830-3025-495b-82f9-86e3d3f2cba9: Columns # Columns
     710bf09b-4c84-48be-a381-a26df0333086: Default # Default
     769d91eb-1473-4b3d-94ab-4457fd4d9edf: Banner # Banner
     776d48de-4d02-4d51-9db6-a7259627fcde: Blog # Blog
@@ -110,6 +111,7 @@ meta:
     bf111906-4e13-4842-9f2c-55c211a9def3: 'Slider Image' # Slider Image
     c831ba3e-f080-458b-9c81-8c26b52b62d5: 'Project Slider' # Project Slider
     c87287cb-455a-40c9-a6ee-55fb0827a89e: Excerpt # Excerpt
+    caf0a72c-d4ed-424e-afbc-8c3b2e7ee93a: Columns # Columns
     cc0cda22-0084-4cc6-b0bb-4ad82ddc44a1: 'Blog Post' # Blog Post
     d3e33d75-0505-4fc0-bc07-acefbb69a249: Imprenta # Imprenta
     d64ae2db-e6e5-4c44-954c-57bd79fc6321: 'CTA Button' # CTA Button
@@ -123,6 +125,7 @@ meta:
     df402d3e-ddfa-4994-a215-f5ad8cce0e7d: Body # Body
     e047ff7f-8934-4fe5-bcb7-6d562b70ebfa: Vacancies # Vacancies
     e2c006d6-fafe-465b-8f2d-e476fcc83fe5: '404' # 404
+    e6dd6f28-4f8f-4581-83e1-9c544de53f90: Column # Column
     e77b2b31-cf96-495c-9bf1-f7005040e690: Navigation # Navigation
     e134be12-be30-4dd4-8138-ac295fce043b: 'footer Linkedin' # footer Linkedin
     e359e1e8-8a0e-4f38-addb-ac8d7fe7c095: 'footer Facebook' # footer Facebook
@@ -162,8 +165,8 @@ plugins:
       bypassSpamCheckOnLoggedInUsers: false
       clientDigestFrequency: 1
       clientDigestRecipients: null
-      defaultFromEmail: '{{ craft.app.projectConfig.get(''email.fromEmail'') }}'
-      defaultFromName: '{{ craft.app.projectConfig.get(''email.fromName'') }}'
+      defaultFromEmail: "{{ craft.app.projectConfig.get('email.fromEmail') }}"
+      defaultFromName: "{{ craft.app.projectConfig.get('email.fromName') }}"
       defaultView: submissions
       defaults:
         __assoc__:

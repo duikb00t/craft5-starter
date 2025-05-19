@@ -1,0 +1,28 @@
+{#
+<!--
+Intro Block Template
+---------------------
+This template renders an "intro" section, typically used at the top of a page
+to present a heading, supporting text, and an optional call-to-action (CTA) button.
+
+Expected Variables:
+- block.title: The heading text displayed prominently.
+- block.body:  Supporting paragraph or description text.
+- block.ctaButton: (Optional) A button linking to a call-to-action. Should be a URL or object with a `label` property.
+
+-->
+#}
+<section class="intro-block py-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-extrabold">{{ block.title }}</h2>
+
+        <div class="text-lg text-gray-600 mt-4">{{ block.body }}</div>
+
+        {% if block.ctaButton %}
+            <a href="{{ block.ctaButton }}"
+               class="inline-block bg-black text-white font-semibold py-2 px-6 rounded shadow hover:bg-gray-800 transition">
+                {{ block.ctaButton.label ?? 'Open' }}
+            </a>
+        {% endif %}
+    </div>
+</section>

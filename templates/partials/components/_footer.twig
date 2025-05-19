@@ -28,10 +28,12 @@
                     </div>
                 </div>
             </div>
+            {% cache globally using key 'static-usps' %}
+            {{  include('partials/components/_usps') }}
+            {% endcache %}
 
             <div class="container mx-auto py-6">
                 <div class="flex flex-wrap  gap-6 text-center">
-
                     <div class="text-white"><a href="{{ siteUrl }}">Copyright {{ craft.app.sites.currentSite.name }}</a></div>
                     <a href="{{ url('algemene-voorwaarden') }}" class="text-white hover:underline">Algemene voorwaarden</a>
                     <a href="#" class="text-white hover:underline">Privacy</a>

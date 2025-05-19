@@ -4,7 +4,7 @@
   "require": {
     "barrelstrength/sprout-redirects": "5.0.3",
     "craftcms/ckeditor": "4.8.0",
-    "craftcms/cms": "5.7.5",
+    "craftcms/cms": "5.7.6",
     "jrrdnx/craft-search-assistant": "^1.1.4",
     "nystudio107/craft-twigpack": "^5.0.0",
     "nystudio107/craft-vite": "^5.0.1",
