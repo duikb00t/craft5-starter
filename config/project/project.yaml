@@ -1,4 +1,4 @@
-dateModified: 1747486064
+dateModified: 1747855569
 elementSources:
   craft\elements\Entry:
     -
@@ -72,6 +72,7 @@ meta:
     5c1171ae-15de-487b-ab25-55cd8752a28d: Submenu # Submenu
     5fc14dd2-2b62-45ac-83b0-984a1f8661c3: 'Blog Categories' # Blog Categories
     6e35ac18-f4e7-4772-8dd6-080cdd0efea9: Link # Link
+    8b688900-866e-4959-992b-121da02f5ef3: Subservice # Subservice
     9ddd51fe-ec67-4684-b83e-c334ee920f66: 'Content Block Image' # Content Block Image
     12ee1616-7b38-4caa-a85b-49d456e0c9fa: Pages # Pages
     36adcd5f-5f7a-444d-aaa3-093f717e494d: image # image
@@ -114,6 +115,7 @@ meta:
     caf0a72c-d4ed-424e-afbc-8c3b2e7ee93a: Columns # Columns
     cc0cda22-0084-4cc6-b0bb-4ad82ddc44a1: 'Blog Post' # Blog Post
     d3e33d75-0505-4fc0-bc07-acefbb69a249: Imprenta # Imprenta
+    d57bafb0-4818-4ce0-b845-59e815ac639d: 'Assortiment - Subservices' # Assortiment - Subservices
     d64ae2db-e6e5-4c44-954c-57bd79fc6321: 'CTA Button' # CTA Button
     d226dab4-90c9-4784-bd31-0f0119200bf5: 'Footer Contact' # Footer Contact
     d465e21b-70b2-4dc6-b3a4-fa85f7da2d74: 'Service Subpage' # Service Subpage

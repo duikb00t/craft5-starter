@@ -1,6 +1,8 @@
-color: yellow
+color: null
 fieldLayouts:
-  e4e29c9f-9151-45db-b8c0-c5b60cf266fd:
+  210591b4-15b7-4165-90fe-00dfe7112ede:
+    cardView:
+      - slug
     tabs:
       -
         elementCondition: null
@@ -10,7 +12,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-04-01T18:29:55+00:00'
+            dateAdded: '2025-05-20T15:38:48+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -31,15 +33,15 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: e7f0229f-41b1-40a9-a76a-96020c8c3211
+            uid: 8868172e-48e1-4649-a131-2ece1cc6ce95
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-04-03T07:52:24+00:00'
+            dateAdded: '2025-05-20T15:40:35+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: b3ea05ad-338b-46a1-ba8c-54a3eef37d9f # Featured Image
+            fieldUid: df402d3e-ddfa-4994-a215-f5ad8cce0e7d # Body
             handle: null
             includeInCards: false
             instructions: null
@@ -48,15 +50,15 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: ad1d5188-3a88-43be-a058-89be9ca0c1a4
+            uid: a45dc415-c731-4fc9-b74b-48501425ff1d
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-04-03T07:59:42+00:00'
+            dateAdded: '2025-05-21T19:26:09+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 1a5c74d4-7b0e-4d0b-9d95-0f6831237fab # Content
+            fieldUid: f34aad52-4756-44e0-b970-78813ee16a13 # Slider
             handle: null
             includeInCards: false
             instructions: null
@@ -65,40 +67,17 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3766c785-2b8e-41ed-8316-72dcbcf57f2b
+            uid: a868a921-bd9a-42e1-a739-785d8fc79fb5
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 3a8892fb-3ceb-4ccb-be77-ef29b443b0a5
+        uid: 8048d2f2-6a4f-41b8-8718-1a2cb434352b
         userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-05-20T15:41:12+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: d57bafb0-4818-4ce0-b845-59e815ac639d # Assortiment - Subservices
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 2a3adad4-6602-403b-a4b6-523f12353fad
-            userCondition: null
-            warning: null
-            width: 100
-        name: Assortiment
-        uid: 04329be3-cb81-4580-a399-90f9f18de136
-        userCondition: null
-handle: serviceSubpage
+handle: subservice
 hasTitleField: true
-icon: list-tree
-name: 'Service Subpage'
+icon: null
+name: Subservice
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

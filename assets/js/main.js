@@ -9,6 +9,10 @@ import "@css/main.css";
 import Glider from 'glider-js';
 import 'glider-js/glider.min.css'; // Import styles
 
+import 'swiper/css';
+import 'swiper/css/thumbs';
+import 'swiper/css/navigation';
+
 
 document.addEventListener("DOMContentLoaded", function () {
 	const slider = document.querySelector(".glider");

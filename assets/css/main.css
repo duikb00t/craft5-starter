@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* styles.css */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -27,9 +28,6 @@ h2{
     color: #0a0d0f;
 }
 
-h3 {
-    color: red;
-}
 
 
 header{

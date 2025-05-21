@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: subservices
+instructions: null
+name: 'Assortiment - Subservices'
+searchable: false
+settings:
+  createButtonLabel: 'Voeg een assortiment tegel toe'
+  defaultIndexViewMode: cards
+  enableVersioning: true
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 8b688900-866e-4959-992b-121da02f5ef3 # Subservice
+  includeTableView: false
+  maxEntries: 25
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

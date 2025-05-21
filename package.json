@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "glider-js": "^1.7.9",
-    "rollup": "^4.34.1"
+    "rollup": "^4.34.1",
+    "swiper": "^11.2.7"
   },
   "description": ""
 }

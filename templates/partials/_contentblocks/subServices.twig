@@ -1,0 +1,85 @@
+{% if subservices | length %}
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {% for subservice in subservices %}
+                {% set firstSlide = subservice.heroSlider.one() %}
+                {% set image = firstSlide is defined ? firstSlide.sliderImage.one() : null %}
+
+                <div class="bg-white rounded-xl shadow p-4 text-center cursor-pointer" data-modal-target="modal-{{ subservice.id }}">
+                    {% if image %}
+                        <img src="{{ image.url }}" alt="{{ firstSlide.sliderHeading|default('Slide image') }}" class="w-full h-48 object-cover rounded-md mb-4" loading="lazy">
+                    {% endif %}
+                    <h3 class="text-lg font-bold mb-2">{{ subservice.title }}</h3>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded">
+                        Ontdek meer
+                    </button>
+                </div>
+
+                {# MODAL CONTENT FOR EACH SUBSERVICE #}
+                <div id="modal-{{ subservice.id }}" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-60 z-50 px-4">
+                    <div class="bg-white rounded-xl w-full max-w-6xl mx-auto relative p-6 md:p-10 flex flex-col md:flex-row gap-8 overflow-y-auto max-h-[90vh]">
+
+                        {# Left column: Text + CTA #}
+                        <div class="flex-1">
+                            <h2 class="text-xl md:text-2xl font-bold text-black mb-4">{{ subservice.title }}</h2>
+                            <div class="text-gray-700 space-y-4 mb-6">
+                                {{ subservice.body }}
+                            </div>
+
+                            <button class="mt-auto bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-5 rounded">
+                                Vraag ons advies
+                            </button>
+                        </div>
+
+                        {# Right column: Main image and thumbs #}
+                        <div class="flex-1">
+                            {% set slides = subservice.heroSlider.all() %}
+                            {% if slides|length %}
+                                <div class="aspect-w-16 aspect-h-9 mb-4">
+                                    {% set firstImage = slides[0].sliderImage.one() %}
+                                    {% if firstImage %}
+                                        <img src="{{ firstImage.url }}" alt="Slide" class="w-full h-auto object-cover rounded-md">
+                                    {% endif %}
+                                </div>
+
+                                {# Thumbnails (just showing as static preview blocks for now) #}
+                                <div class="flex gap-2">
+                                    {% for slide in slides %}
+                                        {% set thumb = slide.sliderImage.one() %}
+                                        {% if thumb %}
+                                            <img src="{{ thumb.url }}" alt="Thumb" class="w-20 h-20 object-cover rounded cursor-pointer border hover:border-yellow-400">
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        {# Close button #}
+                        <button data-modal-close class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-black font-bold">
+                            &times;
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+<script>
+    document.querySelectorAll('[data-modal-target]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = document.getElementById(btn.getAttribute('data-modal-target'));
+            target.classList.remove('hidden');
+            target.classList.add('flex');
+        });
+    });
+
+    document.querySelectorAll('[data-modal-close]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('[id^="modal-"]');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        });
+    });
+
+</script>

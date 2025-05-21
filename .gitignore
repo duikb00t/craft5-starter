@@ -70,3 +70,6 @@ lerna-debug.log*
 .ddev/.global_commands/
 web/uploads
 web/dist
+
+*.sql
+*.sql.gz
