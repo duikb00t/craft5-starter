@@ -12,7 +12,6 @@
     scrollbar-width: none;
 }
 
-
 body {
     color: #000;
 }
@@ -33,9 +32,12 @@ h2{
 header{
 }
 
+
 footer {
-    background: #0a0d0f;
-    background-size: 50%;
+    border-top: 1px solid black;
+    background-image: url('https://imprenta.ddev.site/images/footer/imprenta_footer_full_width_light.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 #main-menu .active {

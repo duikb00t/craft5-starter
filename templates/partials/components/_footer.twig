@@ -4,21 +4,21 @@
     {% for element in footerGlobal.footerElements %}
         {% set logo = element.logo.one() %}
 
-        <footer class="w-full bg-cover bg-center" style="background-image: url('https://imprenta.ddev.site/images/footer/imprenta_footer_full_width_background.png');">
+        <footer class="w-full bg-cover bg-center">
             <!-- Container with 4 columns -->
             <div class="container mx-auto py-10">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 text-white">
+                    <div class="p-6 text-black">
                         {% if logo %}
                             <img src="{{ logo.url }}" alt="{{ logo.title }}">
                         {% endif %}
                         <p>{{ element.footerAdres }}</p>
                     </div>
-                    <div class="p-6 text-white">
+                    <div class="p-6 text-black">
                         <p><strong>Contact</strong></p>
                         <p>{{ element.footerContact }}</p>
                     </div>
-                    <div class="p-6 text-white">
+                    <div class="p-6 text-black">
                         <p><strong>Social Media</strong></p>
                         <ul>
                             <li><a target="_blank" href="{{ element.footerFacebook }}">Facebook</a></li>
@@ -32,12 +32,14 @@
             {{  include('partials/components/_usps') }}
             {% endcache %}
 
-            <div class="container mx-auto py-6">
-                <div class="flex flex-wrap  gap-6 text-center">
-                    <div class="text-white"><a href="{{ siteUrl }}">Copyright {{ craft.app.sites.currentSite.name }}</a></div>
-                    <a href="{{ url('algemene-voorwaarden') }}" class="text-white hover:underline">Algemene voorwaarden</a>
-                    <a href="#" class="text-white hover:underline">Privacy</a>
-                    <a href="#" class="text-white hover:underline">Cookies</a>
+            <div class="bg-black p-2">
+                <div class="container mx-auto py-6">
+                    <div class="flex flex-wrap  gap-6 text-center">
+                        <div class="text-black"><a href="{{ siteUrl }}">Copyright {{ craft.app.sites.currentSite.name }}</a></div>
+                        <a href="{{ url('algemene-voorwaarden') }}" class="text-white hover:underline">Algemene voorwaarden</a>
+                        <a href="#" class="text-white hover:underline">Privacy</a>
+                        <a href="#" class="text-white hover:underline">Cookies</a>
+                    </div>
                 </div>
             </div>
         </footer>
