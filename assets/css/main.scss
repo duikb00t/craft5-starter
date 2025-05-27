@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* styles.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  color: #000;
+}
+
+#topnav {
+  background-color: #FBF7CC;
+}
+#topnav a{
+  color: #0a0d0f;
+}
+
+h2{
+  color: #0a0d0f;
+}
+
+
+
+header{
+}
+
+
+footer {
+  border-top: 1px solid black;
+  background-image: url('https://imprenta.ddev.site/images/footer/imprenta_footer_full_width_light.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#main-menu .active {
+  background: red;
+}
+
+.glider-contain {
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.glider-slide {
+  height: 100%;
+}

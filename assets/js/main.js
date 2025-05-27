@@ -4,7 +4,7 @@ import "vite/modulepreload-polyfill";
  * Import global styles
  */
 
-import "@css/main.css";
+import "@css/main.scss";
 
 import Glider from 'glider-js';
 import 'glider-js/glider.min.css'; // Import styles
